@@ -34,3 +34,14 @@ body, html{
   	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
+}
+
+/*home.erb*/
+.posts {
+  border:1px solid black;
+  width:900px;
+  height: 640px;
+  border-color: rgb(255,255,255, 0.9);
+}
+
+/* */
