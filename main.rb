@@ -6,7 +6,7 @@ require 'sinatra/base'
 require 'rack-flash'
 
 
-get '/index' do
+get '/' do
 	erb :index
 end
 
