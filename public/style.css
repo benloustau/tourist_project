@@ -25,8 +25,8 @@ body, html{
 /*index.erb*/
 #name{
 	position: absolute;
-  	top: 5%;
-  	left: 50%;
+  	top:5%;
+    left:50%;
   	transform: translate(-50%, -35%);
   	color: black;
   	background: white;
@@ -35,6 +35,7 @@ body, html{
   	border-radius: 20px;
   	height: 100px;
   	width: 700px;
+    margin:0 auto;
   	margin-top: 2.5%;
     font-family: Amatic SC;
 }
@@ -61,8 +62,60 @@ body, html{
   	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
-<<<<<<< HEAD
 }
+
+#left{
+  height:100%;
+  width:49.5%;
+  position:relative;
+  float:left;
+ }
+
+ #form{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30%;
+  padding-top: 10px;
+ }
+
+ .inputs{
+  box-shadow: 3px 3px gray;
+  border-radius: 5px;
+  color:black;
+ }
+
+ .submitBtn{
+  background-color: aquamarine;
+  color:black;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px black;
+ }
+
+
+ #line{
+  height:90%;
+  border:1px solid gray;
+  position:relative;
+  float:left;
+  margin-top:4%;
+ }
+
+ #right{
+  height:100%;
+  width:49.5%;
+  position:relative;
+  float:right;
+ }
+
+ #form1{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 43%;
+  padding-top: 10px;
+ }
+
+ /*end of index.erb*/
 
 /*home.erb*/
 #header {
@@ -166,61 +219,8 @@ body, html{
     font-size: 17px;
     margin: 12px 0 12px 0;
 }
-=======
-    display:inline;
- }
 
- #left{
- 	height:100%;
- 	width:49.5%;
-	position:relative;
- 	float:left;
- }
-
- #form{
- 	text-align: center;
- 	font-weight: bold;
- 	margin-top: 30%;
- 	padding-top: 10px;
- }
-
- .inputs{
- 	box-shadow: 3px 3px gray;
- 	border-radius: 5px;
- }
-
- .submitBtn{
- 	background-color: aquamarine;
- 	color:black;
- 	font-weight: bold;
- 	border-radius: 5px;
- 	box-shadow: 2px 2px black;
- }
-
-
- #line{
- 	height:90%;
- 	border:1px solid gray;
- 	position:relative;
- 	float:left;
- 	margin-top:4%;
- }
-
- #right{
- 	height:100%;
- 	width:49.5%;
- 	position:relative;
- 	float:right;
- }
-
- #form1{
- 	text-align: center;
- 	font-weight: bold;
- 	margin-top: 43%;
- 	padding-top: 10px;
- }
-
- /*end of index.erb*/
+ 
 
 /****************************************************************/
 /************************* PROFILE ******************************/
@@ -310,7 +310,36 @@ body, html{
   outline: none;
 }
 
->>>>>>> d6fa925d5c0db814e7b635000a10ea150382ea06
+/********** contact_us **************/
+
+#contact_main{
+  height: 500px;
+  width: 700px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  color: black;
+  background: white;
+  opacity:.7;
+  border-radius: 5%;
+  margin-top: 17%;
+  font-family: Amatic SC;
+}
+
+#form2{
+  width:500px;
+  height:400px;
+  margin-top:50px;
+  margin-left:100px;
+  padding-top: 7%;
+}
+
+#contact_submit{
+  text-align: center
+}
+
+/*********end of contact_us *************/
 
 
 
@@ -345,9 +374,6 @@ body, html{
 
 
 
-<<<<<<< HEAD
-/* */
-=======
 
 
 
@@ -359,5 +385,6 @@ body, html{
 
 
 
->>>>>>> 8d2c83c12188bae79a478b2f5075f27ef18d5eba
->>>>>>> d6fa925d5c0db814e7b635000a10ea150382ea06
+
+
+

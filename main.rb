@@ -4,6 +4,7 @@ require './models'
 require 'bundler/setup'
 require 'sinatra/base'
 require 'rack-flash'
+require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
@@ -30,13 +31,36 @@ post '/sign_in' do
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
-  		flash[:alert] = "Sorry, that user doesn't exist. Feel free to sign up."
+  		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/index'
 	end
 end	
 
 post '/sign_up' do
- User.create(params[:user])
- redirect '/home'
+	 User.create(params[:user])
+ 	flash[:notice] = "Your account has been created. Please login or sign-up"
+ 	redirect '/index'
 end	
+
+post '/send_email' do
+
+	m = Mandrill::API.new
+	comment = "<html><body> #{params[:comment]} </body></html>"
+	message = { 
+	 :subject=> "Customer comment from NYCTourist", 
+	 :from_name=>"Customer",
+	 :text=> params[:comment],
+	 :to=>[ 
+	 { 
+	 :email=> "benloustau@gmail.com", 
+	 :name=> "NYCTourist" 
+	 } 
+	 ], 
+	 :html=> comment,
+	 :from_email=> params[:from], 
+	} 
+	sending = m.messages.send message
+	puts sending
+	redirect '/home'
+end
 	
