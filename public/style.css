@@ -24,23 +24,31 @@ body, html{
 /*index.erb*/
 #name{
 	position: absolute;
-  	top: 35%;
+  	top: 5%;
   	left: 50%;
   	transform: translate(-50%, -35%);
   	color: black;
   	background: white;
   	opacity:.7;
   	text-align: center;
-  	border-radius: 5%;
+  	border-radius: 20px;
   	height: 100px;
   	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
 }
 
+#name_color{
+	color:#EEC015;
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 25px;
+
+}
+
 #intro{
 	position: absolute;
-  	top: 35%;
+  	top: 43%;
   	left: 50%;
   	transform: translate(-50%, -35%);
   	color: black;
@@ -52,5 +60,57 @@ body, html{
   	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
+    display:inline;
  }
- 
+
+ #left{
+ 	height:100%;
+ 	width:49.5%;
+	position:relative;
+ 	float:left;
+ }
+
+ #form{
+ 	text-align: center;
+ 	font-weight: bold;
+ 	margin-top: 30%;
+ 	padding-top: 10px;
+ }
+
+ .inputs{
+ 	box-shadow: 3px 3px gray;
+ 	border-radius: 5px;
+ }
+
+ .submitBtn{
+ 	background-color: aquamarine;
+ 	color:black;
+ 	font-weight: bold;
+ 	border-radius: 5px;
+ 	box-shadow: 2px 2px black;
+ }
+
+
+ #line{
+ 	height:90%;
+ 	border:1px solid gray;
+ 	position:relative;
+ 	float:left;
+ 	margin-top:4%;
+ }
+
+ #right{
+ 	height:100%;
+ 	width:49.5%;
+ 	position:relative;
+ 	float:right;
+ }
+
+ #form1{
+ 	text-align: center;
+ 	font-weight: bold;
+ 	margin-top: 43%;
+ 	padding-top: 10px;
+ }
+
+ /*end of index.erb*/
