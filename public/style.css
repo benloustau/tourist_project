@@ -1,10 +1,14 @@
-/*layout.erb*/
+/************************** Layout.erb ****************************/
+
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
 html{
  background: url(img/nyc.png) no-repeat center center fixed; 
  -webkit-background-size: cover;
@@ -16,35 +20,43 @@ html{
 }
 
 body, html{
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-/*end of layout.erb*/
-/*index.erb*/
+/*******************************************************************/
+/************************ end of layout.erb ************************/
+/*******************************************************************/
+
+
+
+
+/*******************************************************************/
+/**************************** index.erb ****************************/
+/*******************************************************************/
+
 #name{
-	position: absolute;
-  	top:5%;
-    left:50%;
-  	transform: translate(-50%, -35%);
-  	color: black;
-  	background: white;
-  	opacity:.7;
-  	text-align: center;
-  	border-radius: 20px;
-  	height: 100px;
-  	width: 700px;
-    margin:0 auto;
-  	margin-top: 2.5%;
+  position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    color: black;
+    background: white;
+    opacity:.7;
+    text-align: center;
+    border-radius: 20px;
+    height: 100px;
+    width: 700px;
+    margin-top: 2.5%;
     font-family: Amatic SC;
 }
 
 #name_color{
-	color:#EEC015;
-	font-size: 40px;
-	font-weight: bold;
-	padding-top: 25px;
+  color:#EEC015;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 25px;
 
 }
 
@@ -62,7 +74,7 @@ body, html{
   	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
-}
+  }
 
 #left{
   height:100%;
@@ -82,7 +94,7 @@ body, html{
   box-shadow: 3px 3px gray;
   border-radius: 5px;
   color:black;
- }
+}
 
  .submitBtn{
   background-color: aquamarine;
@@ -91,7 +103,6 @@ body, html{
   border-radius: 5px;
   box-shadow: 2px 2px black;
  }
-
 
  #line{
   height:90%;
@@ -115,9 +126,18 @@ body, html{
   padding-top: 10px;
  }
 
- /*end of index.erb*/
 
-/*home.erb*/
+/*************************************************************************/
+/**************************** end of index.erb ***************************/
+/*************************************************************************/
+
+
+
+
+/*************************************************************************/
+/******************************* home.erb ********************************/
+/*************************************************************************/
+
 #header {
   border: 1px solid black;
   background: rgba(255,255,255, 0.4);
@@ -141,7 +161,7 @@ body, html{
 }
 
 #leftnav ul {
-   list-style: none;
+  list-style: none;
 }
 
 .navlink {
@@ -163,76 +183,105 @@ body, html{
 }
 
 #leftnav ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navlink li {
-  padding: 5px 0; }
+  padding: 5px 0; 
+}
 
-.navlink a{
+.navlink a {
   text-decoration: none;
 }
 
-#home_content{
-    width:400px;
-    margin-left: 2em;
-    color:white;
-    margin-top: 2em;
-} 
-
-.home_subheader{
-  font-size:30px;
+#welcome {
+  font-size:24px;
+  width: 200;
   border-radius: 10px;  
   border: 4px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
- /* margin-left: 0.5em;*/
+  margin-top: 20px;
+}
+
+#home_content{
+  width:800px;
+  margin-left: 2em;
+  color:white;
+  margin-top: 2em;
+} 
+
+.home_subheader{
+  font-size:20px;
+  width: 400px;
+  border-radius: 10px;  
+  border: 4px solid grey;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px 10px 5px;  
+  display:block;
 }   
 
 #home_post{
-    float:left;
-    border:5px solid grey;
-    border-radius: 10px;
-    width:400px;
-    height:300px;
-    margin-top: 1em;
+  border:5px solid grey;
+  border-radius: 10px;
+  width:400px;
+  height:auto;
+  margin-top: 10px;
 }
 
 .formlabel{
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   display: block;
-  padding: 20px  7px 7px  ;   
+  padding-top: 10px; 
+  padding-bottom: 2px; 
+  padding-left: 10px;
+} 
+
+#title {
+  border:1px solid #7ac9b7;
+  border-radius:5px;
+  margin: 5px;
+  color: black;
+  height: 35px;
+  padding: 10px;
 }
 
-#home_subheader form .field {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
+#textarea {
+  border:1px solid #7ac9b7;
+  border-radius:5px;
+  margin: 5px;
+  color: black;
+  padding: 10px;
+  width: 380px;
+}
+
+#textarea:focus{
+  outline: none;
 }
 
 .submit {
-    color: white;
-    font-size: 17px;
-    margin: 12px 0 12px 0;
+  color: white;
+  font-size: 17px;
+  margin: 12px 0 12px 0;
+  text-align: center;
 }
-
- 
 
 /****************************************************************/
 /************************* PROFILE ******************************/
 /****************************************************************/
 
 .profile_wrapper{
-  width: 700px;
+  width: 800px;
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
   padding-top: 0;
-  font-family: 'Lato';
+  font-family: sans-serif;
 }
 
 .profile_top{
@@ -263,7 +312,7 @@ body, html{
 
 #bio{
   float: left;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .profile_bottom{
@@ -293,20 +342,32 @@ body, html{
   border-radius: 20px;
 } 
 
+#create_post{
+  margin-left: 20px;
+}
+
 #post_input{
-  padding-top: 20px;
   text-align: center;
 }
 
-#feed_input{
-  width: 380px;
-  height: 50px;
+#feed_title{
+  width: 470px;
+  height: 30px;
   border-radius: 5px;
   font-size: 14px;
   padding: 5px;
 }
 
-#feed_input:focus{
+#feed_content{
+  width: 470px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+}
+
+#feed_title:focus, #feed_content:focus{
   outline: none;
 }
 
@@ -340,7 +401,6 @@ body, html{
 }
 
 /*********end of contact_us *************/
-
 
 
 

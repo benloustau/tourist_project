@@ -20,6 +20,10 @@ get '/profile' do
 	erb :profile
 end
 
+get '/edit_profile' do
+	erb :edit_profile
+end
+
 get '/contact_us' do
 	erb :contact_us
 end
