@@ -125,6 +125,8 @@ body, html{
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
+  padding-top: 0;
+  font-family: 'Lato';
 }
 
 .profile_top{
@@ -135,7 +137,6 @@ body, html{
 }
 
 #profile_name{ 
-  font-family: 'Raleway';
   padding-top: 5px;
   font-size: 20px;
   margin-left: 15px;
@@ -191,7 +192,7 @@ body, html{
   text-align: center;
 }
 
-form input{
+#feed_input{
   width: 380px;
   height: 50px;
   border-radius: 5px;
@@ -199,7 +200,7 @@ form input{
   padding: 5px;
 }
 
-form input:focus{
+#feed_input:focus{
   outline: none;
 }
 
