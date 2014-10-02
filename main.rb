@@ -7,7 +7,7 @@ require 'rack-flash'
 
 set :database, "sqlite3:example.sqlite3"
 
-get '/' do
+get '/index' do
 	erb :index
 end
 
