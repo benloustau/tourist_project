@@ -5,8 +5,9 @@ require 'bundler/setup'
 require 'sinatra/base'
 require 'rack-flash'
 
+set :database, "sqlite3:example.sqlite3"
 
-get '/index' do
+get '/' do
 	erb :index
 end
 
