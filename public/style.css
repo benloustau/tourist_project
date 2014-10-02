@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   /*layout.erb*/
   html {
     box-sizing: border-box;
@@ -347,40 +348,325 @@
 
 
 
+=======
+/*layout.erb*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html{
+ background: url(img/nyc.png) no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  position: relative;
+  min-height: 100%;
+}
+
+body, html{
+	margin: 0;
+	padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*end of layout.erb*/
+/*index.erb*/
+#name{
+	position: absolute;
+  	top: 5%;
+  	left: 50%;
+  	transform: translate(-50%, -35%);
+  	color: black;
+  	background: white;
+  	opacity:.7;
+  	text-align: center;
+  	border-radius: 20px;
+  	height: 100px;
+  	width: 700px;
+  	margin-top: 2.5%;
+    font-family: Amatic SC;
+}
+
+#name_color{
+	color:#EEC015;
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 25px;
+
+}
+
+#intro{
+	position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  color: white;
+  background: white;
+  opacity:.7;
+  text-align: center;
+  border-radius: 5%;
+  height: 500px;
+  width: 700px;
+  margin-top: 2.5%;
+  font-family: Amatic SC;
+}
+
+#left{
+  height:100%;
+  width:49.5%;
+  position:relative;
+  float:left;
+ }
+
+ #form{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30%;
+  padding-top: 10px;
+ }
+
+ .inputs{
+  box-shadow: 3px 3px gray;
+  border-radius: 5px;
+ }
+
+ .submitBtn{
+  background-color: aquamarine;
+  color:black;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px black;
+ }
 
 
+ #line{
+  height:90%;
+  border:1px solid gray;
+  position:relative;
+  float:left;
+  margin-top:4%;
+ }
 
+ #right{
+  height:100%;
+  width:49.5%;
+  position:relative;
+  float:right;
+ }
 
+ #form1{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 43%;
+  padding-top: 10px;
+ }
 
+ /*end of index.erb*/
+/*************************************************
+/*home.erb*/
+#header {
+  border: 1px solid black;
+  background: rgba(255,255,255, 0.4);
+  width: 900px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 2%;
+}
 
+#leftnav {
+  border: 1px solid black;
+  box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.75);
+  background: rgba(255,255,255, 0.4);
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-top: 5%;
+  margin-left: 15px;
+  margin-right: 10px;
+  position: fixed;
+}
 
+#leftnav ul {
+   list-style: none;
+}
 
+.navlink {
+  padding: 10px 10px 0; 
+}
 
+.navlink a{
+  text-decoration: none;
+}
 
+#posts {
+  border: 1px solid black;
+  width: 900px;
+  height: 640px;
+  background: rgba(255,255,255, 0.4);
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
+#leftnav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
 
+.navlink li {
+  padding: 5px 0; }
 
+.navlink a{
+  text-decoration: none;
+}
 
+#home_content{
+    width:400px;
+    margin-left: 2em;
+    color:white;
+    margin-top: 2em;
+} 
 
+.home_subheader{
+  font-size:30px;
+  border-radius: 10px;  
+  border: 4px solid grey;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px 10px 5px;  
+ /* margin-left: 0.5em;*/
+}   
 
+#home_post{
+    float:left;
+    border:5px solid grey;
+    border-radius: 10px;
+    width:400px;
+    height:300px;
+    margin-top: 1em;
+}
 
+.formlabel{
+  font-size: 20px;
+  color: white;
+  display: block;
+  padding: 20px  7px 7px  ;   
+}
 
+#home_subheader form .field {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 218px;
+}
 
+.submit {
+    color: white;
+    font-size: 17px;
+    margin: 12px 0 12px 0;
+}
 
+/***************************** end of home
 
-  <<<<<<< HEAD
-  /* */
-  =======
+/****************************************************************/
+/************************* PROFILE ******************************/
+/****************************************************************/
 
+.profile_wrapper{
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 0;
+  font-family: sans-serif;
+}
 
+.profile_top{
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  padding-top: 0;
+  border-radius: 20px;
+}
 
+#profile_name{ 
+  padding-top: 5px;
+  font-size: 20px;
+  margin-left: 15px;
+}
 
+#profile_bio{
+  height: 200px;
+}
 
+#profile_pic{
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
 
+#bio{
+  float: left;
+  margin-left: 80px;
+}
 
+.profile_bottom{
+  margin-top: 0;
+  border-radius: 20px;
+}
 
+#profile_sidebar{
+  width: 33%;
+  float: left;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  margin-right: 20px;
+}
 
+.sidebar_content{
+  font-size: 14px;
+  text-align: center;
+}
 
+#profile_feed{
+  float: left;
+  width: 64%;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+} 
 
-  >>>>>>> 8d2c83c12188bae79a478b2f5075f27ef18d5eba
-  >>>>>>> d6fa925d5c0db814e7b635000a10ea150382ea06
+#create_post{
+  margin-left: 20px;
+}
+
+#post_input{
+  text-align: center;
+}
+
+#feed_title{
+  width: 470px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+#feed_content{
+  width: 470px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+}
+
+#feed_title:focus, #feed_content:focus{
+  outline: none;
+}
