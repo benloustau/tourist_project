@@ -26,10 +26,11 @@ body, html{
   	left: 50%;
   	transform: translate(-50%, -35%);
   	color: white;
-  	background: rgba(29,56,70, .5);
+  	background: white;
+  	opacity:.7;
   	text-align: center;
   	border-radius: 5%;
-  	height: 400px;
-  	width: 400px;
+  	height: 500px;
+  	width: 700px;
   	margin-top: 2.5%;
     font-family: Amatic SC;
