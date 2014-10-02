@@ -124,7 +124,7 @@
   }
 
   #welcome {
-    font-size:24px;
+    font-size:20px;
     width: 200;
     border-radius: 10px;  
     border: 4px solid grey;
@@ -172,19 +172,20 @@
   #title {
     border:1px solid #7ac9b7;
     border-radius:5px;
-    margin: 5px;
+    margin: 2px;
     color: black;
     height: 35px;
     padding: 10px;
+    width: 385px;
   }
 
   #textarea {
     border:1px solid #7ac9b7;
     border-radius:5px;
-    margin: 5px;
+    margin: 2px;
     color: black;
     padding: 10px;
-    width: 380px;
+    width: 385px;
   }
 
   #textarea:focus{
@@ -193,7 +194,7 @@
 
   .submit {
       color: white;
-      font-size: 17px;
+      font-size: 16px;
       margin: 12px 0 12px 0;
       text-align: center;
   }
@@ -532,7 +533,7 @@ body, html{
 } 
 
 .home_subheader{
-  font-size:30px;
+  font-size:18px;
   border-radius: 10px;  
   border: 4px solid grey;
   color: #FFF;
@@ -551,7 +552,7 @@ body, html{
 }
 
 .formlabel{
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   display: block;
   padding: 20px  7px 7px  ;   
@@ -565,7 +566,7 @@ body, html{
 
 .submit {
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     margin: 12px 0 12px 0;
 }
 
