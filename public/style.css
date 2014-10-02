@@ -1,10 +1,15 @@
-/*layout.erb*/
+/*******************************************************************/
+/************************ layout.erb ************************/
+/*******************************************************************/
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
 html{
  background: url(img/nyc.png) no-repeat center center fixed; 
  -webkit-background-size: cover;
@@ -16,39 +21,48 @@ html{
 }
 
 body, html{
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-/*end of layout.erb*/
-/*index.erb*/
+/*******************************************************************/
+/************************ end of layout.erb ************************/
+/*******************************************************************/
+
+
+
+
+/*******************************************************************/
+/**************************** index.erb ****************************/
+/*******************************************************************/
+
 #name{
-	position: absolute;
-  	top: 5%;
-  	left: 50%;
-  	transform: translate(-50%, -35%);
-  	color: black;
-  	background: white;
-  	opacity:.7;
-  	text-align: center;
-  	border-radius: 20px;
-  	height: 100px;
-  	width: 700px;
-  	margin-top: 2.5%;
+  position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    color: black;
+    background: white;
+    opacity:.7;
+    text-align: center;
+    border-radius: 20px;
+    height: 100px;
+    width: 700px;
+    margin-top: 2.5%;
     font-family: Amatic SC;
 }
 
 #name_color{
-	color:#EEC015;
-	font-size: 40px;
-	font-weight: bold;
-	padding-top: 25px;
+  color:#EEC015;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 25px;
 
 }
 
 #intro{
-	position: absolute;
+  position: absolute;
   top: 43%;
   left: 50%;
   transform: translate(-50%, -35%);
@@ -112,9 +126,17 @@ body, html{
   padding-top: 10px;
  }
 
-/*end of index.erb*/
+/*************************************************************************/
+/**************************** end of index.erb ***************************/
+/*************************************************************************/
 
-/*home.erb*/
+
+
+
+/*************************************************************************/
+/******************************* home.erb ********************************/
+/*************************************************************************/
+
 #header {
   border: 1px solid black;
   background: rgba(255,255,255, 0.4);
@@ -138,7 +160,7 @@ body, html{
 }
 
 #leftnav ul {
-   list-style: none;
+  list-style: none;
 }
 
 .navlink {
@@ -160,62 +182,95 @@ body, html{
 }
 
 #leftnav ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navlink li {
-  padding: 5px 0; }
+  padding: 5px 0; 
+}
 
-.navlink a{
+.navlink a {
   text-decoration: none;
 }
 
-#home_content{
-    width:400px;
-    margin-left: 2em;
-    color:white;
-    margin-top: 2em;
-} 
-
-.home_subheader{
-  font-size:30px;
+#welcome {
+  font-size:24px;
+  width: 200;
   border-radius: 10px;  
   border: 4px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
- /* margin-left: 0.5em;*/
+  margin-top: 20px;
+}
+
+#home_content{
+  width:800px;
+  margin-left: 2em;
+  color:white;
+  margin-top: 2em;
+} 
+
+.home_subheader{
+  font-size:20px;
+  width: 400px;
+  border-radius: 10px;  
+  border: 4px solid grey;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px 10px 5px;  
+  display:block;
 }   
 
 #home_post{
-    float:left;
-    border:5px solid grey;
-    border-radius: 10px;
-    width:400px;
-    height:300px;
-    margin-top: 1em;
+  border:5px solid grey;
+  border-radius: 10px;
+  width:400px;
+  height:auto;
+  margin-top: 10px;
 }
 
 .formlabel{
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   display: block;
-  padding: 20px  7px 7px  ;   
+  padding-top: 10px; 
+  padding-bottom: 2px; 
+  padding-left: 10px;
+} 
+
+#title {
+  border:1px solid #7ac9b7;
+  border-radius:5px;
+  margin: 5px;
+  color: black;
+  height: 35px;
+  padding: 10px;
 }
 
-#home_subheader form .field {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 218px;
+#textarea {
+  border:1px solid #7ac9b7;
+  border-radius:5px;
+  margin: 5px;
+  color: black;
+  padding: 10px;
+  width: 380px;
+}
+
+#textarea:focus{
+  outline: none;
 }
 
 .submit {
-    color: white;
-    font-size: 17px;
-    margin: 12px 0 12px 0;
+  color: white;
+  font-size: 17px;
+  margin: 12px 0 12px 0;
+  text-align: center;
 }
+
+
 
 /****************************************************************/
 /************************* PROFILE ******************************/
@@ -316,36 +371,3 @@ body, html{
 #feed_title:focus, #feed_content:focus{
   outline: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
