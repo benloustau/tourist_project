@@ -8,15 +8,29 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
+enable :sessions
+use Rack::Flash, :sweep => true
+set :sessions => true
+
+def current_user
+	if session[:user_id]
+		@current_user = User.find(session[:user_id])
+	else
+		nil
+	end
+end
+
 get '/' do
 	erb :index
 end
 
 get '/home' do
+	@user = current_user
 	erb :home
 end
 
 get '/profile' do
+	@user = current_user
 	erb :profile
 end
 
@@ -30,19 +44,19 @@ end
 
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
-	@user = User.where(email: params[:email]).first
- 	if @user && @user.password  == params[:password] 
+	@user = User.where(email: params[:user][:email]).first
+ 	if @user && @user.password  == params[:user][:password]
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
-  		# flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/index'
+  		flash[:notice] = "Login failed please try again or sign up"
+    	redirect '/'
 	end
 end	
 
 post '/sign_up' do
 	User.create(params[:user])
- 	# flash[:notice] = "Your account has been created. Please login or sign-up"
+ 	flash[:notice] = "Your account has been created. Please login or sign-up"
  	redirect '/edit_profile'
 end	
 
@@ -53,18 +67,15 @@ post '/edit_profile' do
 	redirect '/profile'
 end
 
-def current_user
-	if session[:user_id]
-		@current_user = User.find(session[:user_id])
-	else
-		nil
-	end
-end
-
 post '/profile' do
 	puts "params are: #{params.inspect}"
 	Post.create(params[:post])
-	# redirect '/profile'
+	redirect '/profile'
+end
+
+get '/logout' do
+	session[:user_id] = nil
+	redirect '/'
 end
 
 post '/send_email' do

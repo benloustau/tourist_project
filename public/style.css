@@ -306,11 +306,11 @@ body, html{
   max-height: 200px;
   border-radius: 50%;
   float: left;
-  margin-left: 15px;
+  margin-left: 25px;
   padding-bottom: 10px;
 }
 
-#bio{
+#bio_section{
   float: left;
   margin-left: 80px;
 }
@@ -330,7 +330,8 @@ body, html{
 }
 
 .sidebar_content{
-  font-size: 14px;
+  font-size: 15px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -347,7 +348,7 @@ body, html{
 }
 
 #post_input{
-  text-align: center;
+  margin-left: 20px;
 }
 
 #feed_title{
@@ -374,7 +375,6 @@ body, html{
 #feed_submitBtn{
   width: 100px;
   padding: 5px;
-  margin-left: 42%;
   border-radius: 5px;
   background-color: rgb(240, 240, 240);
 }
@@ -393,6 +393,7 @@ body, html{
 #edit_greeting{
   margin-left: 40px;
   padding-top: 30px;
+  font-size: 40px;
 }
 
 #edit_header{
@@ -425,7 +426,6 @@ body, html{
   border: none;
   width: 500px;
   height: 60px;
-  font-style: italic;
   font-size: 13px;
 }
 
@@ -448,7 +448,6 @@ body, html{
 
 #birthday{
   margin-left: 50px;
-  font-style: italic;
   font-size: 13px;
   width: 215px;
   padding: 6px;
