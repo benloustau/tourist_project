@@ -61,18 +61,19 @@ body, html{
 }
 
 #intro{
-	position: absolute;
-  	left:50%;
-  	transform: translate(-50%, -35%);
-  	color: white;
-  	background: white;
-  	opacity:.7;
-  	text-align: center;
-  	border-radius: 5%;
-  	height: 500px;
-  	width: 700px;
-  	margin-top: 2.5%;
-    font-family: Amatic SC;
+	position:relative;
+  left:50%;
+  margin-top:200px;
+  transform: translate(-50%, -35%);
+  color: white;
+  background: white;
+  opacity:.7;
+  text-align: center;
+  border-radius: 5%;
+  height: 500px;
+  width: 700px;
+  margin-top: 2.5%;
+  font-family: Amatic SC;
   }
 
 #left{
@@ -90,6 +91,7 @@ body, html{
  }
 
  .inputs{
+  background-color: white;
   box-shadow: 3px 3px gray;
   border-radius: 5px;
   color:black;
@@ -368,6 +370,14 @@ body, html{
 
 #feed_title:focus, #feed_content:focus{
   outline: none;
+}
+
+#feed_submitBtn{
+  width: 100px;
+  padding: 5px;
+  margin-left: 42%;
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
 }
 
 /****************************************************************/

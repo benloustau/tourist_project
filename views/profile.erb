@@ -2,7 +2,7 @@
 
 	<section class="profile_top">
 		<header id="profile_name">
-			<h1>current_user.fname + current_user.lname</h1>
+			<h1><%= current_user.fname + current_user.lname if current_user %></h1>
 		</header>
 
 		<div id="profile_bio">
@@ -24,10 +24,12 @@
 
 		<div id="profile_feed">
 			<p id="create_post">Create a New Post:</p>
-			<form id="post_input">
-				<input id="feed_title" type="text" placeholder="title">
+			<form method="POST" action="/profile" id="post_input">
+				<input name="[post]title" id="feed_title" type="text" placeholder="title">
 				<br><br>
-				<textarea id="feed_content" type="text" placeholder="Enter content here: "></textarea>
+				<textarea name="[post]body" id="feed_content" type="text" placeholder="Enter content here: "></textarea>
+				<br>
+				<input type="submit" id="feed_submitBtn">
 			</form>
 		</div>
 	</section>

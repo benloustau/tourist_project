@@ -1,9 +1,12 @@
 <div id="edit_wrapper">
+
 		
 	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname + current_user.lname if current_user %></em></h1>
+	
+	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname if current_user %></em></h1>
 	<h2 id="edit_header">Create Your Profile</h2>
 
-	<form method="POST" action="/profile" id="edit_profile_form">
+	<form method="POST" action="/edit_profile" id="edit_profile_form">
 		<label for="upload_photo" class="edit_labels">Upload Photo</label>
 		<br><br><br>
 		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
