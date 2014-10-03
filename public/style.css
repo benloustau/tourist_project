@@ -138,6 +138,9 @@ body, html{
 /*************************************************************************/
 /******************************* home.erb ********************************/
 /*************************************************************************/
+#wrapper {
+  width: auto;
+}
 
 #header {
   border: 1px solid black;
@@ -154,11 +157,11 @@ body, html{
   background: rgba(255,255,255, 0.4);
   width: 150px;
   height: 150px;
-  float: left;
   margin-top: 5%;
   margin-left: 15px;
   margin-right: 10px;
   position: fixed;
+
 }
 
 #leftnav ul {
@@ -196,16 +199,27 @@ body, html{
 .navlink a {
   text-decoration: none;
 }
+.navlink div {
+  border: 1px solid red;
+  text-align: center;
+  padding: 3px;
+  margin: 5px;
+}
 
 #welcome {
-  font-size:24px;
-  width: 200;
+  font-size:20px;
+  max-width: 400px;
+  width: auto;
   border-radius: 10px;  
-  border: 4px solid grey;
+  border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   margin-top: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: New York;
+  text-align: center;
 }
 
 #home_content{
@@ -216,18 +230,19 @@ body, html{
 } 
 
 .home_subheader{
-  font-size:20px;
+  font-size:18px;
   width: 400px;
   border-radius: 10px;  
-  border: 4px solid grey;
+  border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   display:block;
+  margin-top: -10px;
 }   
 
 #home_post{
-  border:5px solid grey;
+  border:3px solid grey;
   border-radius: 10px;
   width:400px;
   height:auto;
@@ -267,10 +282,17 @@ body, html{
 
 .submit {
   color: white;
-  font-size: 17px;
-  margin: 12px 0 12px 0;
+  font-size: 16px;
+  margin: 8px 0 12px 0;
   text-align: center;
 }
+
+.submit input {
+  display: inline-block;
+  background-color:  #7ac9b7;
+  text-decoration: none;
+  color: white;
+} 
 
 /****************************************************************/
 /************************* PROFILE ******************************/
