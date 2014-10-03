@@ -186,7 +186,7 @@ body, html{
 #posts {
   border: 1px solid black;
   width: 900px;
-  height: 640px;
+  height: auto;
   background: rgba(255,255,255, 0.7);
   margin: 0 auto;
   margin-top: 5%;
@@ -215,7 +215,7 @@ body, html{
   border-radius: 20px;
 }
 
-#welcome {
+.heading {
   font-size:20px;
   max-width: 400px;
   width: auto;
@@ -315,7 +315,6 @@ body, html{
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
-
 
 
 /****************************************************************/
