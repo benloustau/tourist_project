@@ -48,11 +48,8 @@ post '/sign_in' do
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
-
-  		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/'
-  		
-
+  	flash[:notice] = "Login failed please try again or sign up"
+    redirect '/'
 	end
 end	
 
@@ -62,6 +59,12 @@ post '/sign_up' do
  	redirect '/profile'
 
 end	
+
+get 'users/:id' do
+	User.all.each do |id|
+
+	end
+end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
@@ -117,9 +120,9 @@ post '/send_email' do
 end
 
 delete '/user_id' do |id|
-	User.delete(params[:user])
+	 User.delete(params[:user]) 
 	redirect '/'
-end		
+ end
 
 
 
