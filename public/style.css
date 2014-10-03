@@ -140,8 +140,12 @@ body, html{
 /******************************* home.erb ********************************/
 /*************************************************************************/
 #wrapper {
-  width: auto;
-}
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 0;
+  font-family: sans-serif;}
 
 #header {
   border: 1px solid black;
@@ -150,11 +154,12 @@ body, html{
   height: 150px;
   margin: 0 auto;
   margin-top: 2%;
+  border-radius: 20px;
 }
 
 #leftnav {
   border: 1px solid black;
-  box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.7);
   background: rgba(255,255,255, 0.7);
   width: 150px;
   height: 150px;
@@ -162,6 +167,7 @@ body, html{
   margin-left: 15px;
   margin-right: 10px;
   position: fixed;
+  border-radius: 20px;
 
 }
 
@@ -185,6 +191,7 @@ body, html{
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
+  border-radius: 20px;
 }
 
 #leftnav ul {
@@ -205,13 +212,14 @@ body, html{
   text-align: center;
   padding: 3px;
   margin: 5px;
+  border-radius: 20px;
 }
 
 #welcome {
   font-size:20px;
   max-width: 400px;
   width: auto;
-  border-radius: 10px;  
+  border-radius: 20px;  
   border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
@@ -223,31 +231,27 @@ body, html{
   text-align: center;
 }
 
-#home_content{
-  width:800px;
-  margin-left: 2em;
-  color:white;
-  margin-top: 2em;
-} 
 
 .home_subheader{
   font-size:18px;
   width: 400px;
-  border-radius: 10px;  
+  border-radius: 20px;  
   border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   display:block;
-  margin-top: -10px;
+  margin-top:  10px;
+  margin-left: 10px;
 }   
 
 #home_post{
   border:3px solid grey;
-  border-radius: 10px;
+  border-radius: 20px;
   width:400px;
   height:auto;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .formlabel{
@@ -261,7 +265,7 @@ body, html{
 
 #title {
   border:1px solid #7ac9b7;
-  border-radius:5px;
+  border-radius:20px;
   margin: 5px;
   color: black;
   height: 35px;
@@ -270,7 +274,7 @@ body, html{
 
 #textarea {
   border:1px solid #7ac9b7;
-  border-radius:5px;
+  border-radius:20px;
   margin: 5px;
   color: black;
   padding: 10px;
@@ -304,8 +308,6 @@ body, html{
   -ms-transform: translateZ(0);
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  margin: 0 auto;
-  width: 900px;
 }
 
 .float:hover {
@@ -313,6 +315,8 @@ body, html{
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+
+
 
 /****************************************************************/
 /************************* PROFILE ******************************/
