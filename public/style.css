@@ -37,10 +37,10 @@ body, html{
 /*******************************************************************/
 
 #name{
+  margin:0 auto;
   position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -35%);
+  margin-top:2.5%;
+  margin-left: 25%;
     color: black;
     background: white;
     opacity:.7;
@@ -48,7 +48,6 @@ body, html{
     border-radius: 20px;
     height: 100px;
     width: 700px;
-    margin-top: 2.5%;
     font-family: Amatic SC;
 }
 
@@ -61,10 +60,6 @@ body, html{
 }
 
 #intro{
-	position:relative;
-  left:50%;
-  margin-top:200px;
-  transform: translate(-50%, -35%);
   color: white;
   background: white;
   opacity:.7;
@@ -72,9 +67,15 @@ body, html{
   border-radius: 5%;
   height: 500px;
   width: 700px;
-  margin-top: 2.5%;
+  margin-top: 8%;
   font-family: Amatic SC;
   }
+
+.label_color{
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
+}  
 
 #left{
   height:100%;
@@ -144,7 +145,7 @@ body, html{
 
 #header {
   border: 1px solid black;
-  background: rgba(255,255,255, 0.7;
+  background: rgba(255,255,255, 0.7);
   width: 900px;
   height: 150px;
   margin: 0 auto;

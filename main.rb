@@ -32,26 +32,21 @@ post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:email]).first
  	if @user && @user.password  == params[:password] 
- 		flash[:notice] = "You have successfully signed in"
+ 		# flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
 
-  		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/'
   		# flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/home'
+    	redirect '/'
+  		
 
 	end
 end	
 
 post '/sign_up' do
 	User.create(params[:user])
-
- 	flash[:notice] = "Your account has been created. Please login or sign-up"
- 	redirect '/'
-
- 	# flash[:notice] = "Your account has been created. Please login or sign-up"
+	# flash[:notice] = "Your account has been created. Please login or sign-up"
  	redirect '/edit_profile'
 
 end	
@@ -59,7 +54,7 @@ end
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
 	Profile.create(params[:profile])
-	flash[:notice] = "Thank you for creating your profile."
+	# flash[:notice] = "Thank you for creating your profile."
 	redirect '/profile'
 end
 
@@ -96,7 +91,7 @@ post '/send_email' do
 	} 
 	sending = m.messages.send message
 	puts sending
-	flash[:notice] = "Your email was sent successfully"
+	# flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
 
