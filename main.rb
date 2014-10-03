@@ -70,10 +70,13 @@ post '/sign_up' do
 end	
 
 post '/post_tweet' do
-	puts "params are: #{params.inspect}"
-	Post.create(params[:post])
+	@post = Post.new(title:params[:title], body:params[:body])
+	@post.user = current_user
+	@post.save
 	redirect '/home'
+
 end
+
 
 # post '/post_tweet' do 
 # 	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
