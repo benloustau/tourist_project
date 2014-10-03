@@ -316,6 +316,10 @@ body, html{
   transform: translateY(-5px);
 }
 
+#tweet_methods hr{
+  width: 700px;
+  text-align: center;
+}
 
 /****************************************************************/
 /************************* PROFILE ******************************/
