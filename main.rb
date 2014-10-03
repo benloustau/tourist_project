@@ -28,19 +28,18 @@ get '/contact_us' do
 	erb :contact_us
 end
 
+
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:email]).first
  	if @user && @user.password  == params[:password] 
- 		flash[:notice] = "You have successfully signed in"
+ 		# flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
 
-  		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/'
   		# flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/home'
+    	redirect '/'
 
 	end
 end	
