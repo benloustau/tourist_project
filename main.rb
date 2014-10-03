@@ -46,7 +46,9 @@ end
 
 post '/sign_up' do
 	User.create(params[:user])
-	# flash[:notice] = "Your account has been created. Please login or sign-up"
+	flash[:notice] = "Your account has been created. Please login or sign-up"
+
+ 	# flash[:notice] = "Your account has been created. Please login or sign-up"
  	redirect '/edit_profile'
 
 end	
@@ -94,6 +96,17 @@ post '/send_email' do
 	# flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
+
+get '/dashboard' do 
+@posts = current_user.posts
+@all_users = User.all
+erb :dashboard
+redirect
+end
+
+# post '/post_tweet' do
+
+# end	
 
 
 
