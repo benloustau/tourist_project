@@ -8,29 +8,15 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
-enable :sessions
-use Rack::Flash, :sweep => true
-set :sessions => true
-
-def current_user
-	if session[:user_id]
-		@current_user = User.find(session[:user_id])
-	else
-		nil
-	end
-end
-
 get '/' do
 	erb :index
 end
 
 get '/home' do
-	@user = current_user
 	erb :home
 end
 
 get '/profile' do
-	@user = current_user
 	erb :profile
 end
 
@@ -42,47 +28,30 @@ get '/contact_us' do
 	erb :contact_us
 end
 
-
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
-	@user = User.where(email: params[:user][:email]).first
- 	if @user && @user.password  == params[:user][:password] 
+	@user = User.where(email: params[:email]).first
+ 	if @user && @user.password  == params[:password] 
  		# flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
-  		flash[:notice] = "Login failed please try again or sign up"
+
+  		# flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
+  		
+
 	end
 end	
 
 post '/sign_up' do
 	User.create(params[:user])
-<<<<<<< HEAD
 	flash[:notice] = "Your account has been created. Please login or sign-up"
 
  	# flash[:notice] = "Your account has been created. Please login or sign-up"
-=======
- 	flash[:notice] = "Your account has been created. Please login or sign-up"
->>>>>>> 0fe90a97d5eaf1eef95168d03feda0e5972a636c
  	redirect '/edit_profile'
 
 end	
-
-post '/post_tweet' do
-	@post = Post.new(title:params[:title], body:params[:body])
-	@post.user = current_user
-	@post.save
-	redirect '/home'
-
-end
-
-
-# post '/post_tweet' do 
-# 	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
-# 	redirect '/home'
-
-# end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
@@ -91,15 +60,18 @@ post '/edit_profile' do
 	redirect '/profile'
 end
 
+def current_user
+	if session[:user_id]
+		@current_user = User.find(session[:user_id])
+	else
+		nil
+	end
+end
+
 post '/profile' do
 	puts "params are: #{params.inspect}"
 	Post.create(params[:post])
-	redirect '/profile'
-end
-
-get '/logout' do
-	session[:user_id] = nil
-	redirect '/'
+	# redirect '/profile'
 end
 
 post '/send_email' do
@@ -125,16 +97,10 @@ post '/send_email' do
 	redirect '/home'
 end
 
-get '/dashboard' do 
-@posts = current_user.posts
-@all_users = User.all
-erb :dashboard
-redirect
-end
-
-# post '/post_tweet' do
-
-# end	
+delete '/user/:id' do |id|
+	user.delete(params[:user])
+	redirect '/'
+end		
 
 
 
