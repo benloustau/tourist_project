@@ -1,69 +1,66 @@
-<div id="header">
-
-</div>
-
-<div id="leftnav">
-        <ul>
-        	<li class="navlink">
-                <a href="/home">
-                <div>Home</div>
-                </a>
-            </li>
-            <li class="navlink">
-                <a href="/profile">
-                <div>Profile</div>
-                </a>
-            </li>
-            <li class="navlink">
-                <a href="/">
-                <div>Logout</div>
-                </a>
-            </li>
-        </ul>
-</div>
-
-<div id="wrapper">
-	<div id="welcome">
-		Welcome,
-		<%=@user.fname if @user %>
+	<div id="leftnav">
+	        <ul>
+	        	<li class="navlink">
+	                <a href="/home">
+	                <div>Home</div>
+	                </a>
+	            </li>
+	            <li class="navlink">
+	                <a href="/profile">
+	                <div>Profile</div>
+	                </a>
+	            </li>
+	            <li class="navlink">
+	                <a href="/">
+	                <div>Logout</div>
+	                </a>
+	            </li>
+	        </ul>
 	</div>
+<div id="wrapper">
+	<div id="header">
 
-	<div id="home_content">
+	</div>
+	<div id="posts">
+		<div id="welcome">
+			Welcome, 
+			<%@user.fname if @user %>
+		</div>
 		<span class="home_subheader">Create a new post</span>
-		
+			
 		<div id="home_post">
 			<form action="/post_tweet" method="POST">
-			  <label for="title" class="formlabel"> Title </label>
-			  <input type="text" name="title" id="title">
-			  <label for="content" class="formlabel">Content</label>
-			  <textarea rows="4" cols="50" name="body"  id="textarea"></textarea>	
-			  <div class="float" id="submit">
+			    <label for="title" class="formlabel"> Title </label>
+			  	<input type="text" name="title" id="title">
+			  	<label for="content" class="formlabel">Content</label>
+			  	<textarea rows="4" cols="50" name="body"  id="textarea"></textarea>	
+			  	<div class="float" id="submit">
 			        <input type="submit" value="Submit" id="signin_submit"/>
-	          </div>
+		    	</div>
 			</form>
-    	</div>
-    		<div id="posts">
-	    		<h1 class="tweets">
-	      			Posts 
-	    		</h1>
-			</div>
-			<div id="tweets_method">
-				<% Post.all.each do |post|%>
-				    <hr color="grey">
-					<div class="post_fname">
-					   @<%=post.user.fname + post.user.lname %>
-					</div>
-					<div class="post_title">   
-					   <%= post.title %>
-					</div>  
-					<div class="post_body"> 
-					   <%= post.body %>
-					</div>
-					<br>
+	   	</div>
+	    <div id="post_feed">
+		    <h1 class="tweets">
+	  			Posts 
+		    </h1>
+		</div>
+		<div id="tweets_method">
+			<% Post.all.each do |post|%>
+			    <hr color="grey">
+				<div class="post_fname">
+					@<%=post.user.fname + post.user.lname %>
+				</div>
+				<div class="post_title">   
+					<%= post.title %>
+				</div>  
+				<div class="post_body"> 
+					<%= post.body %>
+				</div>
+				<br>
 				<% end %>	
-			</div>
-	</div>
+		</div>
 </div>
+
 
 
 <script>
@@ -73,7 +70,6 @@
 		})
 	});	
 </script>
-
 
 
 
