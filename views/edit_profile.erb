@@ -1,25 +1,25 @@
-<% if flash[:notice] %>
-		<div class="flash notice">
-		<%= flash[:notice] %>
-		</div>
-	<% end %>
-
 <div id="edit_wrapper">
-	<form method="POST" action="/create_profile">
-		<label for="fname">First Name</label>
-			<input type="text" name="fname" class="edit_inputs">
-		<label for="lname">Last Name</label>
-			<input type="text" name="lname" class="edit_inputs">
-		<label for="upload_photo"></label>
-		<label for="age"></label>
-			<input type="text" name="age" class="edit_inputs">
-		<label for="gender">Gender</label>
-			<input type="radio" name="gender" value="Male">
-			<input type="radio" name="gender" value="Female">
-		<label for="resident">Are you a resident of NYC?</label>
-			<input type="radio" name="resident" value="Yes">
-			<input type="radio" name="resident" value="No">
 		
-	</form>
+	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname + current_user.lname if current_user %></em></h1>
+	<h2 id="edit_header">Create Your Profile</h2>
+
+	<form method="POST" action="/profile" id="edit_profile_form">
+		<label for="upload_photo" class="edit_labels">Upload Photo</label>
+		<br><br><br>
+		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
+			<textarea name="[profile]bio" id="edit_textarea" placeholder="Max 250 characters"></textarea>
+		<br><br>
+		<label for="birthday" class="edit_labels">Birthday</label>
+			<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" placeholder="mm/dd/yyyy">
+		<br><br>
+		<label for="gender" class="edit_labels">Gender</label>
+			<input type="text" name="[profile]gender" class="edit_inputs" id="gender">
+		<br><br><br>
+		<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
+			<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
+			<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
+		<br><br><br>
+		<input type="submit" id="edit_submitBtn">
+	</form>	
 
 </div>
