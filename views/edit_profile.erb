@@ -1,4 +1,7 @@
 <div id="edit_wrapper">
+
+		
+	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname + current_user.lname if current_user %></em></h1>
 	
 	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname if current_user %></em></h1>
 	<h2 id="edit_header">Create Your Profile</h2>
@@ -20,6 +23,6 @@
 			<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
 		<br><br><br>
 		<input type="submit" id="edit_submitBtn">
-	</form>
+	</form>	
 
 </div>

@@ -53,7 +53,7 @@ body, html{
 }
 
 #name_color{
-  color:#EEC015;
+  color:#00FF00;
   font-size: 40px;
   font-weight: bold;
   padding-top: 25px;
@@ -61,19 +61,19 @@ body, html{
 }
 
 #intro{
-	position: absolute;
-  	top: 43%;
-  	left: 50%;
-  	transform: translate(-50%, -35%);
-  	color: white;
-  	background: white;
-  	opacity:.7;
-  	text-align: center;
-  	border-radius: 5%;
-  	height: 500px;
-  	width: 700px;
-  	margin-top: 2.5%;
-    font-family: Amatic SC;
+	position:relative;
+  left:50%;
+  margin-top:200px;
+  transform: translate(-50%, -35%);
+  color: white;
+  background: white;
+  opacity:.7;
+  text-align: center;
+  border-radius: 5%;
+  height: 500px;
+  width: 700px;
+  margin-top: 2.5%;
+  font-family: Amatic SC;
   }
 
 #left{
@@ -91,6 +91,7 @@ body, html{
  }
 
  .inputs{
+  background-color: white;
   box-shadow: 3px 3px gray;
   border-radius: 5px;
   color:black;
