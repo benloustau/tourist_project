@@ -51,6 +51,12 @@ post '/sign_up' do
 
 end	
 
+post '/post_tweet' do 
+	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
+	redirect '/home'
+
+end
+
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
 	Profile.create(params[:profile])
