@@ -31,8 +31,8 @@ end
 
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
-	@user = User.where(email: params[:email]).first
- 	if @user && @user.password  == params[:password] 
+	@user = User.where(email: params[:user][:email]).first
+ 	if @user && @user.password  == params[:user][:password] 
  		# flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
@@ -51,11 +51,17 @@ post '/sign_up' do
 
 end	
 
-post '/post_tweet' do 
-	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
+post '/post_tweet' do
+	puts "params are: #{params.inspect}"
+	Post.create(params[:post])
 	redirect '/home'
-
 end
+
+# post '/post_tweet' do 
+# 	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
+# 	redirect '/home'
+
+# end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
