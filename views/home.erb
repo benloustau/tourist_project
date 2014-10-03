@@ -36,13 +36,31 @@
 		  <input type="text" name="title" id="title">
 		  <label for="content" class="formlabel">Content</label>
 		  <textarea rows="4" cols="50" name="content"  id="textarea"></textarea>	
-		  <div class="submit">
+		  <div class="float" id="submit">
 		         <input type="submit" value="Submit" id="signin_submit"/>
           </div>
 		</form>
     </div>
 	</div>
-	
+	<div id="posts">
+	    <h1 class="tweets">
+	       Tweets 
+	    </h1>
+
+		<% Post.all.each do |post|%>
+		    <hr color="grey">
+			<div class="post_fname">
+			   @<%=post.user.fname + post.user.lname %>
+			</div>
+			<div class="post_title">   
+			   <%= post.title %>
+			</div>  
+			<div class="post_content"> 
+			   <%= post.content %>
+			</div>
+			<br>
+		<% end %>	
+	</div>
 </div>
 </div>
 

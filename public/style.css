@@ -143,7 +143,7 @@ body, html{
 
 #header {
   border: 1px solid black;
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7;
   width: 900px;
   height: 150px;
   margin: 0 auto;
@@ -153,7 +153,7 @@ body, html{
 #leftnav {
   border: 1px solid black;
   box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.75);
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7);
   width: 150px;
   height: 150px;
   margin-top: 5%;
@@ -179,7 +179,7 @@ body, html{
   border: 1px solid black;
   width: 900px;
   height: 640px;
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7);
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -279,19 +279,38 @@ body, html{
   outline: none;
 }
 
-.submit {
+#submit {
   color: white;
   font-size: 16px;
   margin: 8px 0 12px 0;
-  text-align: center;
 }
 
-.submit input {
+#submit input {
   display: inline-block;
   background-color:  #7ac9b7;
   text-decoration: none;
   color: white;
 } 
+
+.float {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  width: 900px;
+}
+
+.float:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
 
 /****************************************************************/
 /************************* PROFILE ******************************/
