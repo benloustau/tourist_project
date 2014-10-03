@@ -8,7 +8,7 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
-get '/index' do
+get '/' do
 	erb :index
 end
 
