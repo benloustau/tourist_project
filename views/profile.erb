@@ -1,14 +1,17 @@
+
 <div class="profile_wrapper">
 
 	<section class="profile_top">
 		<header id="profile_name">
-			<h1><%= current_user.fname + current_user.lname if current_user %></h1>
+			<h1><%= @user.fname + " " + @user.lname %></h1>
 		</header>
 
 		<div id="profile_bio">
-			<img id="profile_pic" src= "/img/keika.png" alt="profile-pic"/>
-			<section id="bio">
-				<p>BIO</p>
+			<img id="profile_pic" src= "/img/profile_pic.png" alt="profile-pic"/>
+			<section id="bio_section">
+				<p><%= @profile.bio %></p>
+				<p><%= @profile.gender %></p>
+				<p><%= @profile.birthday %></p>
 			</section>
 		</div>
 	</section>
@@ -23,18 +26,28 @@
 		</div>
 
 		<div id="profile_feed">
-			<p id="create_post">Create a New Post:</p>
+
+			<h1>My Posts</h1>
+			<p id="create_post">Create a New Post</p>
+
 			<form method="POST" action="/profile" id="post_input">
-				<input name="[post]title" id="feed_title" type="text" placeholder="title">
+				<input name="[post]title" id="feed_title" type="text" placeholder="Title">
 				<br><br>
 				<textarea name="[post]body" id="feed_content" type="text" placeholder="Enter content here: "></textarea>
-				<br>
-				<input type="submit" id="feed_submitBtn">
+				<br><br>
+				<input type="submit" id="feed_submitBtn" value="Post">
 			</form>
+
+			<% @user.posts.all.each do |post| %>
+				<div class="post_title"><%= post.title %></div>
+				<div class="post_body"><%= post.body %></div>
+			<% end %>
+
 		</div>
 	</section>
 
 </div>
+
 
 
 
