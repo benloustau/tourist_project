@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003190843) do
+ActiveRecord::Schema.define(version: 20141002185139) do
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
@@ -22,15 +22,9 @@ ActiveRecord::Schema.define(version: 20141003190843) do
 
   create_table "profiles", force: true do |t|
     t.integer "user_id"
-    t.string  "bio"
     t.string  "gender"
-    t.date    "birthday"
     t.boolean "resident"
-  end
-
-  create_table "relationships", force: true do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
+    t.date    "birthday"
   end
 
   create_table "users", force: true do |t|
