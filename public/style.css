@@ -328,16 +328,17 @@ body, html{
 }
 
 .profile_top{
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   padding-top: 0;
   border-radius: 20px;
 }
 
 #profile_name{ 
-  padding-top: 5px;
-  font-size: 20px;
+  padding-top: 15px;
+  font-size: 40px;
   margin-left: 15px;
+  margin-bottom: 0;
 }
 
 #profile_bio{
@@ -349,13 +350,25 @@ body, html{
   max-height: 200px;
   border-radius: 50%;
   float: left;
-  margin-left: 25px;
-  padding-bottom: 10px;
+  margin-left: 28px;
+  margin-bottom: 20px;
 }
 
 #bio_section{
   float: left;
   margin-left: 80px;
+}
+
+.bio_content{
+  background-color: #fff;
+  width: 500px;
+  margin-left: 280px;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.bio_content p{
+  padding: 10px;
 }
 
 .profile_bottom{
@@ -367,7 +380,7 @@ body, html{
   width: 33%;
   float: left;
   height: 800px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
   margin-right: 20px;
 }
@@ -382,9 +395,13 @@ body, html{
   float: left;
   width: 64%;
   height: 800px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
 } 
+
+#profile_feed_title{
+  margin-left: 20px;
+}
 
 #create_post{
   margin-left: 20px;

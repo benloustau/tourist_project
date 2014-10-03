@@ -80,14 +80,18 @@ end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
-	Profile.create(params[:profile])
-	# flash[:notice] = "Thank you for creating your profile."
+	@profile = Profile.new(params[:profile])
+	@profile.user = current_user
+	@profile.save
+	flash[:notice] = "Thank you for creating your profile."
 	redirect '/profile'
 end
 
-post '/profile' do
+post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
-	Post.create(params[:post])
+	@post = Post.new(params[:post])
+	@post.user = current_user
+	@post.save
 	redirect '/profile'
 end
 
