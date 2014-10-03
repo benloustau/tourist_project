@@ -22,13 +22,13 @@
 
 	</div>
 	<div id="posts">
-		<div id="welcome">
+		<div class="heading">
 			Welcome, 
 			<%@user.fname if @user %>
 		</div>
 		<span class="home_subheader">Create a new post</span>
 	<div id="home_post">
-		<form action="post_tweet" method="POST">
+		<form action="/post_tweet" method="POST">
 		  <label for="title" class="formlabel"> Title </label>
 		  <input type="text" name="title" id="title">
 		  <label for="content" class="formlabel">Content</label>
@@ -38,75 +38,32 @@
           </div>
 		</form>
     </div>
-		
-    	</div>
+    <div class="heading">
+	    Tweets
 	</div>
-
-	<div id="posts">
-	    <h1 class="tweets">Tweets</h1>
-	    <h1 class="tweets">
-	       Posts 
-	    </h1>
-	</div>
-
 	<div id="tweets_method">
 		<% Post.all.each do |post|%>
 		    <hr color="grey">
 			<div class="post_fname">
 			   @<%=post.user.fname + post.user.lname %>
-    		<div id="posts">
-	    		<h1 class="tweets">
-	      			Posts 
-	    		</h1>
 			</div>
-			<div id="tweets_method">
-				<% Post.all.each do |post|%>
-				    <hr color="grey">
-					<div class="post_fname">
-					   @<%=post.user.fname + post.user.lname %>
-					</div>
-					<div class="post_title">   
-					   <%= post.title %>
-					</div>  
-					<div class="post_body"> 
-					   <%= post.body %>
-					</div>
-					<br>
-				<% end %>	
+			<div class="post_title">   
+			   <%= post.title %>
+			</div>  
+			<div class="post_body"> 
+				<%= post.body %>
 			</div>
-
 			<br>
 		<% end %>	
-
 	</div>
-	   	</div>
-	    <div id="post_feed">
-		    <h1 class="tweets">
-	  			Posts 
-		    </h1>
-		</div>
-		<div id="tweets_method">
-			<% Post.all.each do |post|%>
-			    <hr color="grey">
-				<div class="post_fname">
-					@<%=post.user.fname + post.user.lname %>
-				</div>
-				<div class="post_title">   
-					<%= post.title %>
-				</div>  
-				<div class="post_body"> 
-					<%= post.body %>
-				</div>
-				<br>
-				<% end %>	
-		</div>
+		
+    </div>
 </div>
-
 
 
 <script>
 	$(document).ready(function(){
-		$("#submitBtn").click(function(){
+		$("#submit").click(function(){
 			alert("Your message has been posted!")
 		})
 	});	
