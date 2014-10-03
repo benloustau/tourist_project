@@ -23,32 +23,46 @@
 </div>
 
 <div id="wrapper">
-<div id="posts">
 	<div id="welcome">
 		Welcome,
 		<%=@user.fname if @user %>
 	</div>
+
 	<div id="home_content">
 		<span class="home_subheader">Create a new post</span>
-	<div id="home_post">
-		<form action="/post_tweet" method="POST">
-		  <label for="title" class="formlabel"> Title </label>
-		  <input type="text" name="[post]title" id="title">
-		  <label for="content" class="formlabel">Content</label>
-		  <textarea rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
-		  <div class="float" id="submit">
-		         <input type="submit" value="Submit" id="signin_submit"/>
-          </div>
-		</form>
-    </div>
+		
+		<div id="home_post">
+			<form action="/post_tweet" method="POST">
+			  <label for="title" class="formlabel"> Title </label>
+			  <input type="text" name="title" id="title">
+			  <label for="content" class="formlabel">Content</label>
+			  <textarea rows="4" cols="50" name="body"  id="textarea"></textarea>	
+			  <div class="float" id="submit">
+			        <input type="submit" value="Submit" id="signin_submit"/>
+	          </div>
+			</form>
+    	</div>
+    		<div id="posts">
+	    		<h1 class="tweets">
+	      			Posts 
+	    		</h1>
+			</div>
+			<div id="tweets_method">
+				<% Post.all.each do |post|%>
+				    <hr color="grey">
+					<div class="post_fname">
+					   @<%=post.user.fname + post.user.lname %>
+					</div>
+					<div class="post_title">   
+					   <%= post.title %>
+					</div>  
+					<div class="post_body"> 
+					   <%= post.body %>
+					</div>
+					<br>
+				<% end %>	
+			</div>
 	</div>
-	<div id="posts">
-	    <h1 class="tweets">
-	       Posts 
-	    </h1>
-
-
-</div>
 </div>
 
 
