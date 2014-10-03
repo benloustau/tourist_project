@@ -8,6 +8,10 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
+enable :sessions
+use Rack::Flash, :sweep => true
+set :sessions => true
+
 def current_user
 	if session[:user_id]
 		@current_user = User.find(session[:user_id])
@@ -38,14 +42,14 @@ end
 
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
-	@user = User.where(email: params[:email]).first
- 	if @user && @user.password  == params[:password] 
- 		# flash[:notice] = "You have successfully signed in"
+	@user = User.where(email: params[:user][:email]).first
+ 	if @user && @user.password  == params[:user][:password] 
+ 		flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
 
-  		# flash[:notice] = "Login failed please try again or sign up"
+  		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
   		
 
@@ -55,8 +59,6 @@ end
 post '/sign_up' do
 	User.create(params[:user])
 	flash[:notice] = "Your account has been created. Please login or sign-up"
-
- 	# flash[:notice] = "Your account has been created. Please login or sign-up"
  	redirect '/edit_profile'
 
 end	
@@ -85,8 +87,10 @@ end
 
 post '/profile' do
 	puts "params are: #{params.inspect}"
-	Post.create(params[:post])
-	# redirect '/profile'
+	@post = Post.new(params[:post])
+	@post.user = current_user
+	@post.save
+	redirect '/profile'
 end
 
 post '/send_email' do
@@ -108,12 +112,12 @@ post '/send_email' do
 	} 
 	sending = m.messages.send message
 	puts sending
-	# flash[:notice] = "Your email was sent successfully"
+	flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
 
-delete '/user/:id' do |id|
-	user.delete(params[:user])
+delete '/user_id' do |id|
+	User.delete(params[:user])
 	redirect '/'
 end		
 
