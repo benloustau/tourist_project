@@ -1,6 +1,11 @@
+<% if flash[:notice] %>
+		<div class="flash notice">
+		<%= flash[:notice] %>
+		</div>
+	<% end %>
+
 <div id="edit_wrapper">
-	
-	<form>
+	<form method="POST" action="/create_profile">
 		<label for="fname">First Name</label>
 			<input type="text" name="fname" class="edit_inputs">
 		<label for="lname">Last Name</label>
@@ -14,6 +19,7 @@
 		<label for="resident">Are you a resident of NYC?</label>
 			<input type="radio" name="resident" value="Yes">
 			<input type="radio" name="resident" value="No">
+		
 	</form>
 
 </div>

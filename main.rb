@@ -8,7 +8,7 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
-get '/index' do
+get '/' do
 	erb :index
 end
 
@@ -32,18 +32,19 @@ post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:email]).first
  	if @user && @user.password  == params[:password] 
+ 		flash[:notice] = "You have successfully signed in"
 		session[:user_id] = @user.id
 		redirect'/home'
   	else
   		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/index'
+    	redirect '/'
 	end
 end	
 
 post '/sign_up' do
 	 User.create(params[:user])
  	flash[:notice] = "Your account has been created. Please login or sign-up"
- 	redirect '/index'
+ 	redirect '/'
 end	
 
 post '/send_email' do
@@ -65,6 +66,8 @@ post '/send_email' do
 	} 
 	sending = m.messages.send message
 	puts sending
+	flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
-	
+
+
