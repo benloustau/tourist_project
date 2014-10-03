@@ -40,7 +40,7 @@ post '/sign_in' do
   		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
   		# flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/index'
+    	redirect '/home'
 
 	end
 end	
@@ -99,5 +99,7 @@ post '/send_email' do
 	flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
+
+
 
 
