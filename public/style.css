@@ -37,10 +37,10 @@ body, html{
 /*******************************************************************/
 
 #name{
+  margin:0 auto;
   position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -35%);
+  margin-top:2.5%;
+  margin-left: 25%;
     color: black;
     background: white;
     opacity:.7;
@@ -48,12 +48,11 @@ body, html{
     border-radius: 20px;
     height: 100px;
     width: 700px;
-    margin-top: 2.5%;
     font-family: Amatic SC;
 }
 
 #name_color{
-  color:#EEC015;
+  color:#00FF00;
   font-size: 40px;
   font-weight: bold;
   padding-top: 25px;
@@ -61,20 +60,22 @@ body, html{
 }
 
 #intro{
-	position: absolute;
-  	top: 43%;
-  	left: 50%;
-  	transform: translate(-50%, -35%);
-  	color: white;
-  	background: white;
-  	opacity:.7;
-  	text-align: center;
-  	border-radius: 5%;
-  	height: 500px;
-  	width: 700px;
-  	margin-top: 2.5%;
-    font-family: Amatic SC;
+  color: white;
+  background: white;
+  opacity:.7;
+  text-align: center;
+  border-radius: 5%;
+  height: 500px;
+  width: 700px;
+  margin-top: 8%;
+  font-family: Amatic SC;
   }
+
+.label_color{
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
+}  
 
 #left{
   height:100%;
@@ -91,6 +92,7 @@ body, html{
  }
 
  .inputs{
+  background-color: white;
   box-shadow: 3px 3px gray;
   border-radius: 5px;
   color:black;
@@ -137,10 +139,13 @@ body, html{
 /*************************************************************************/
 /******************************* home.erb ********************************/
 /*************************************************************************/
+#wrapper {
+  width: auto;
+}
 
 #header {
   border: 1px solid black;
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7);
   width: 900px;
   height: 150px;
   margin: 0 auto;
@@ -150,14 +155,14 @@ body, html{
 #leftnav {
   border: 1px solid black;
   box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.75);
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7);
   width: 150px;
   height: 150px;
-  float: left;
   margin-top: 5%;
   margin-left: 15px;
   margin-right: 10px;
   position: fixed;
+
 }
 
 #leftnav ul {
@@ -176,7 +181,7 @@ body, html{
   border: 1px solid black;
   width: 900px;
   height: 640px;
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.7);
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -195,16 +200,27 @@ body, html{
 .navlink a {
   text-decoration: none;
 }
+.navlink div {
+  border: 1px solid red;
+  text-align: center;
+  padding: 3px;
+  margin: 5px;
+}
 
 #welcome {
-  font-size:24px;
-  width: 200;
+  font-size:20px;
+  max-width: 400px;
+  width: auto;
   border-radius: 10px;  
-  border: 4px solid grey;
+  border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   margin-top: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: New York;
+  text-align: center;
 }
 
 #home_content{
@@ -215,18 +231,19 @@ body, html{
 } 
 
 .home_subheader{
-  font-size:20px;
+  font-size:18px;
   width: 400px;
   border-radius: 10px;  
-  border: 4px solid grey;
+  border: 3px solid grey;
   color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   display:block;
+  margin-top: -10px;
 }   
 
 #home_post{
-  border:5px solid grey;
+  border:3px solid grey;
   border-radius: 10px;
   width:400px;
   height:auto;
@@ -264,11 +281,37 @@ body, html{
   outline: none;
 }
 
-.submit {
+#submit {
   color: white;
-  font-size: 17px;
-  margin: 12px 0 12px 0;
-  text-align: center;
+  font-size: 16px;
+  margin: 8px 0 12px 0;
+}
+
+#submit input {
+  display: inline-block;
+  background-color:  #7ac9b7;
+  text-decoration: none;
+  color: white;
+} 
+
+.float {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  width: 900px;
+}
+
+.float:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /****************************************************************/

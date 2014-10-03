@@ -42,6 +42,7 @@ get '/contact_us' do
 	erb :contact_us
 end
 
+
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:user][:email]).first
@@ -58,12 +59,19 @@ post '/sign_up' do
 	User.create(params[:user])
  	flash[:notice] = "Your account has been created. Please login or sign-up"
  	redirect '/edit_profile'
+
 end	
+
+post '/post_tweet' do 
+	Post.create(title:params[:title], content:params[:content], user_id:current_user.id)
+	redirect '/home'
+
+end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
 	Profile.create(params[:profile])
-	flash[:notice] = "Thank you for creating your profile."
+	# flash[:notice] = "Thank you for creating your profile."
 	redirect '/profile'
 end
 
@@ -97,6 +105,10 @@ post '/send_email' do
 	} 
 	sending = m.messages.send message
 	puts sending
+	# flash[:notice] = "Your email was sent successfully"
 	redirect '/home'
 end
-	
+
+
+
+
