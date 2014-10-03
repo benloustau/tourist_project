@@ -47,20 +47,7 @@
 	       Posts 
 	    </h1>
 
-		<% Post.all.each do |post|%>
-		    <hr color="grey">
-			<div class="post_fname">
-			   @<%=post.user.fname + post.user.lname %>
-			</div>
-			<div class="post_title">   
-			   <%= post.title %>
-			</div>  
-			<div class="post_body"> 
-			   <%= post.body %>
-			</div>
-			<br>
-		<% end %>	
-	</div>
+
 </div>
 </div>
 
