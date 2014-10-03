@@ -59,7 +59,7 @@ end
 post '/sign_up' do
 	User.create(params[:user])
 	flash[:notice] = "Your account has been created. Please login or sign-up"
- 	redirect '/edit_profile'
+ 	redirect '/profile'
 
 end	
 
