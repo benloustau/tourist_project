@@ -36,8 +36,8 @@
 		  <input type="text" name="[post]title" id="title">
 		  <label for="content" class="formlabel">Content</label>
 		  <textarea rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
-		  <div class="submit">
-		    <input type="submit" value="Submit" id="signin_submit"/>
+		  <div class="float" id="submit">
+		         <input type="submit" value="Submit" id="signin_submit"/>
           </div>
 		</form>
     </div>
@@ -55,8 +55,8 @@
 			<div class="post_title">   
 			   <%= post.title %>
 			</div>  
-			<div class="post_content"> 
-			   <%= post.content %>
+			<div class="post_body"> 
+			   <%= post.body %>
 			</div>
 			<br>
 		<% end %>	
