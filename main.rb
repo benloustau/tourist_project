@@ -8,6 +8,14 @@ require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
 
+def current_user
+	if session[:user_id]
+		@current_user = User.find(session[:user_id])
+	else
+		nil
+	end
+end
+
 get '/' do
 	erb :index
 end
@@ -55,18 +63,24 @@ end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
-	Profile.create(params[:profile])
-	# flash[:notice] = "Thank you for creating your profile."
+	@profile = Profile.new(params[:profile])
+	@profile.user = current_user
+	@profile.save
+	flash[:notice] = "Thank you for creating your profile."
 	redirect '/profile'
 end
 
-def current_user
-	if session[:user_id]
-		@current_user = User.find(session[:user_id])
-	else
-		nil
-	end
+post '/post_profile_tweet' do
+	puts "params are: #{params.inspect}"
+	@post = Post.new(params[:post])
+	@post.user = current_user
+	@post.save
+	redirect '/profile'
 end
+
+get '/logout' do
+	session[:user_id] = nil
+	redirect '/'
 
 post '/profile' do
 	puts "params are: #{params.inspect}"
