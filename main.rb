@@ -116,8 +116,9 @@ post '/send_email' do
 	redirect '/home'
 end
 
-delete '/user/:id' do |id|
-	User.delete(params[:user])
+delete '/user_id' do |id|
+	User.delete(current_user.id)
+	
 	redirect '/'
 end	
 
