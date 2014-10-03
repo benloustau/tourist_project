@@ -81,6 +81,7 @@ end
 get '/logout' do
 	session[:user_id] = nil
 	redirect '/'
+end
 
 post '/profile' do
 	puts "params are: #{params.inspect}"
