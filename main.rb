@@ -47,10 +47,15 @@ post '/sign_in' do
  		flash[:notice] = "You have successfully signed in"
 		redirect'/home'
   	else
+<<<<<<< HEAD
 		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
   		
 
+=======
+  	flash[:notice] = "Login failed please try again or sign up"
+    redirect '/'
+>>>>>>> 3ab12ac1b0b67c67ec0af61f95608f9512ed828c
 	end
 end	
 
@@ -60,6 +65,12 @@ post '/sign_up' do
  	redirect '/'
 
 end	
+
+get 'users/:id' do
+	User.all.each do |id|
+
+	end
+end
 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
@@ -123,6 +134,7 @@ post '/send_email' do
 	redirect '/home'
 end
 
+<<<<<<< HEAD
 
 
 post '/user_id' do
@@ -133,6 +145,12 @@ post '/user_id' do
 end	
 
 
+=======
+delete '/user_id' do |id|
+	 User.delete(params[:user]) 
+	redirect '/'
+ end
+>>>>>>> 3ab12ac1b0b67c67ec0af61f95608f9512ed828c
 
 
 
