@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_one :profile
-	has_many :posts
+	has_many :posts, dependent: :destroy
 	has_many :relationships, foreign_key: :follower_id, dependent: :destroy #if I destroy one of the members then destroy this relationship as well
 	has_many :followers, through: :relationships
 	has_many :followeds, through: :relationships
