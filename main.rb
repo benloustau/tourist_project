@@ -134,7 +134,6 @@ post '/send_email' do
 	redirect '/home'
 end
 
-<<<<<<< HEAD
 
 
 post '/user_id' do
@@ -145,12 +144,10 @@ post '/user_id' do
 end	
 
 
-=======
 delete '/user_id' do |id|
 	 User.delete(params[:user]) 
 	redirect '/'
  end
->>>>>>> 3ab12ac1b0b67c67ec0af61f95608f9512ed828c
 
 
 
