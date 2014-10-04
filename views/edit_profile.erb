@@ -1,3 +1,14 @@
+<% if flash[:notice] %>
+		<div class="flash notice">
+		<%= flash[:notice] %>
+		</div>
+	<% end %>	
+	<% if flash[:alert] %>
+		<div class="flash notice">
+		<%= flash[:alert] %>
+		</div>
+	<%end%>
+
 <div id="edit_wrapper">
 	
 	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname if current_user %></em></h1>

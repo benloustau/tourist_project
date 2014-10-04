@@ -1,3 +1,14 @@
+<% if flash[:notice] %>
+		<div class="flash notice">
+		<%= flash[:notice] %>
+		</div>
+	<% end %>	
+	<% if flash[:alert] %>
+		<div class="flash notice">
+		<%= flash[:alert] %>
+		</div>
+	<%end%>
+
 <div id="contact_main">
 	<div id="form2">
 		<form method="POST" action="/send_email">
@@ -9,5 +20,6 @@
 		<input type="submit" class="submitBtn">
 		</div>
 		</form>
+
 	</div>
 </div>

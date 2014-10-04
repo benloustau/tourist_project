@@ -7,10 +7,9 @@ require 'rack-flash'
 require 'mandrill'
 
 set :database, "sqlite3:example.sqlite3"
-
+set :sessions => true
 enable :sessions
 use Rack::Flash, :sweep => true
-set :sessions => true
 
 def current_user
 	if session[:user_id]
@@ -44,12 +43,11 @@ post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:user][:email]).first
  	if @user && @user.password  == params[:user][:password] 
+ 		session[:user_id] = @user.id
  		flash[:notice] = "You have successfully signed in"
-		session[:user_id] = @user.id
 		redirect'/home'
   	else
-
-  		flash[:notice] = "Login failed please try again or sign up"
+		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
   		
 
@@ -58,8 +56,8 @@ end
 
 post '/sign_up' do
 	User.create(params[:user])
-	flash[:notice] = "Your account has been created. Please login or sign-up"
- 	redirect '/profile'
+	flash[:notice] = "Your account has been created. Please login"
+ 	redirect '/'
 
 end	
 
@@ -89,8 +87,9 @@ post '/post_tweet' do
 end
 
 get '/logout' do
-	session[:user_id] = nil
+	flash[:notice] = "You have successfully been loged out"
 	redirect '/'
+	session.clear
 end
 
 post '/profile' do
@@ -124,10 +123,13 @@ post '/send_email' do
 	redirect '/home'
 end
 
-delete '/user_id' do |id|
-	User.delete(current_user.id)
-	
+
+
+post '/user_id' do
+	User.destroy(current_user.id)
+	flash[:alert] = "This action is irriversible. Your User has been deleted"
 	redirect '/'
+	session.clear
 end	
 
 
