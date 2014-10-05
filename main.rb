@@ -46,25 +46,26 @@ post '/sign_in' do
  		session[:user_id] = @user.id
  		flash[:notice] = "You have successfully signed in"
 		redirect'/home'
-  	else
+  else
 		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/'
-  		flash[:notice] = "Login failed please try again or sign up"
-    	redirect '/'
-
+    redirect '/'
 	end
 end	
 
 post '/sign_up' do
 	User.create(params[:user])
+	session[:user_id] = @user.id
 	flash[:notice] = "Your account has been created. Please login"
  	redirect '/'
-
 end	
 
-get 'users/:id' do
-	User.all.each do |id|
-
+get 'profile/:user_id' do
+	if current_user
+		session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
+	else
+		flash[:notice] = "You must log in to view this page."
+		redirect '/'
 	end
 end
 
@@ -74,7 +75,7 @@ post '/edit_profile' do
 	@profile.user = current_user
 	@profile.save
 	flash[:notice] = "Thank you for creating your profile."
-	redirect '/profile'
+	redirect '/profile/:user_id'
 end
 
 post '/post_profile_tweet' do
@@ -97,14 +98,6 @@ get '/logout' do
 	flash[:notice] = "You have successfully been loged out"
 	redirect '/'
 	session.clear
-end
-
-post '/profile' do
-	puts "params are: #{params.inspect}"
-	@post = Post.new(params[:post])
-	@post.user = current_user
-	@post.save
-	redirect '/profile'
 end
 
 post '/send_email' do
@@ -130,7 +123,6 @@ post '/send_email' do
 	redirect '/home'
 end
 
-
 post '/user_id' do
 	@user = User.destroy(current_user.id)
 	@user.posts.each(&:destroy)
@@ -138,6 +130,11 @@ post '/user_id' do
 	redirect '/'
 	session.clear
 end	
+
+post '/follow' do
+
+end	
+	
 
 
 
