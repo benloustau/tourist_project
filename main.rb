@@ -75,10 +75,15 @@ get '/user/:id' do
 	end
 end
 
+
+def date(time)
+   time.strftime("%b %d %Y, %I:%M:%S %p")
+end	
+
 post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
-	Post.order(created_at: :desc)
 	@post = Post.new(params[:post])
+	@post = Post.order(id: :asc)
 	@post.user = current_user
 	@post.save
 	redirect '/profile'
@@ -86,16 +91,12 @@ end
 
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
-	Post.order(created_at: :desc)
 	@post = Post.new(params[:post])
+	@posts = Post.order(id: :asc)
 	@post.user = current_user
 	@post.save
 	redirect '/home'
 end
-
-def date(time)
-   time.strftime("%b %d %Y, %I:%M:%S %p")
-end	
 
 get '/contact_us' do
 	erb :contact_us
