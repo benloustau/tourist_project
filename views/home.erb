@@ -41,12 +41,12 @@
 		<span class="home_subheader">Create a new post</span>
 	<div id="home_post">
 		<form action="/post_tweet" method="POST">
-		  <label for="title" class="formlabel"> Title </label>
-		  <input type="text" name="title" id="title">
+		  <label for="title" class="formlabel">Title</label>
+		  <input type="text" name="[post]title" id="title">
 		  <label for="content" class="formlabel">Content</label>
-		  <textarea rows="4" cols="50" name="content"  id="textarea"></textarea>	
+		  <textarea type="text" rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
 		  <div class="float" id="submit">
-		         <input type="submit" value="Submit" id="signin_submit"/>
+		         <input type="submit" value="Post" class="submitBtn"/>
           </div>
 		</form>
     </div>
@@ -58,6 +58,7 @@
 		    <hr color="grey">
 			<div class="post_fname">
 			   @<%=post.user.fname + post.user.lname %>
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
 			</div>
 			<div class="post_title">   
 			   <%= post.title %>

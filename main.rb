@@ -83,7 +83,7 @@ post '/post_profile_tweet' do
 	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
-	redirect '/profile/:user_id'
+	redirect '/profile'
 end
 
 post '/post_tweet' do
@@ -130,6 +130,11 @@ post '/user_id' do
 	redirect '/'
 	session.clear
 end	
+
+post '/follow' do
+
+end	
+	
 
 
 
