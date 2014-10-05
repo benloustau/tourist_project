@@ -12,7 +12,7 @@
 	<section class="profile_top">
 		<header>
 			<h1 id="profile_name"><%= current_user.fname + " " + current_user.lname %></h1>
-			<button id="edit_profileBtn" onclick="window.location.href='/edit_profile'" class="submitBtn">Edit Profile</button>
+			<button id="edit_profileBtn" onclick="window.location.href='/update'" class="submitBtn">Edit Profile</button>
 		</header>
 
 		<div id="profile_bio">
@@ -32,8 +32,21 @@
 			<h2 class="sidebar_content">INTERESTS</h2>
 			<h2 class="sidebar_content">FOLLOWERS</h2>
 			<h2 class="sidebar_content">FOLLOWS</h2>
+				<div class="follows_list">
+					<% if @current_user.relationship.followed.count > 0 %>
+						<ul>
+							<% @current_user.relationship.followed.each do |friend| %>
+								<a href = "users/<%= followed.id %>">
+									<li><img src="<%= followed.profile.profile_image_url %>"></li>
+									<li><%= followed.fname + " " + followed.lname %></li>
+								</a>
+							<% end %>
+						</ul>
+					<% else %>
+						<p>You're currently not following anyone</p>
+					<% end %>
+				</div>
 			<h2 class="sidebar_content">LINKS</h2>
-		</div>
 
 		<div id="profile_feed">
 
