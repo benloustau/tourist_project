@@ -12,6 +12,7 @@
 	<section class="profile_top">
 		<header>
 			<h1 id="profile_name"><%= current_user.fname + " " + current_user.lname %></h1>
+			<button id="edit_profileBtn" onclick="window.location.href='/edit_profile'" class="submitBtn">Edit Profile</button>
 		</header>
 
 		<div id="profile_bio">
@@ -62,7 +63,7 @@
 
 			<div>
 				<form method="POST" action="/user_id">
-				 <input type="submit" class="submitBtn" value="Delete Account">
+				 <input type="submit" class="submitBtn" id="delete_profileBtn" value="Delete Account">
 				</form>
 
 			</div>

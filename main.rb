@@ -27,25 +27,17 @@ get '/home' do
 	erb :home
 end
 
-get '/profile' do
-	erb :profile
-end
-
-get '/edit_profile' do
-	erb :edit_profile
-end
-
-get '/contact_us' do
-	erb :contact_us
-end
-
 post '/sign_in' do
 	puts "params are: #{params.inspect}"
 	@user = User.where(email: params[:user][:email]).first
  	if @user && @user.password  == params[:user][:password] 
  		session[:user_id] = @user.id
  		flash[:notice] = "You have successfully signed in"
-		redirect'/home'
+ 		if @user == params[:user_id]
+ 			redirect '/home'
+ 		else
+			redirect '/profile/new'
+		end
   else
 		flash[:notice] = "Login failed please try again or sign up"
     redirect '/'
@@ -58,14 +50,9 @@ post '/sign_up' do
  	redirect '/'
 end	
 
-get 'profile/:user_id' do
-	if current_user
-		session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
-	else
-		flash[:notice] = "You must log in to view this page."
-		redirect '/'
-	end
+get '/profile/new' do
+	@profile = Profile.new
+	erb :edit_profile
 end
 
 post '/edit_profile' do
@@ -74,7 +61,18 @@ post '/edit_profile' do
 	@profile.user = current_user
 	@profile.save
 	flash[:notice] = "Thank you for creating your profile."
-	redirect '/profile/:user_id'
+	redirect '/user/:id'
+end
+
+get '/user/:id' do
+	if session[:user_id]
+		@user = User.find(params[:id])
+		redirect '/user/#{@user.id}'
+    erb :profile
+	else
+		flash[:notice] = "You must log in to view this page."
+		redirect '/'
+	end
 end
 
 post '/post_profile_tweet' do
@@ -95,10 +93,8 @@ post '/post_tweet' do
 	redirect '/home'
 end
 
-get '/logout' do
-	flash[:notice] = "You have successfully been loged out"
-	redirect '/'
-	session.clear
+get '/contact_us' do
+	erb :contact_us
 end
 
 post '/send_email' do
@@ -138,8 +134,13 @@ post '/followed' do
 	@followed.save
 	redirect '/home'
 end	
-	
 
+get '/logout' do
+	flash[:notice] = "You have successfully been loged out"
+	redirect '/'
+	session.clear
+end
+	
 
 
 

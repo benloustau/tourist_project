@@ -38,7 +38,9 @@
 			Welcome, 
 			<%@user.fname if @user %>
 		</div>
+
 		<span class="home_subheader">Create a new post</span>
+
 	<div id="home_post">
 		<form action="/post_tweet" method="POST">
 		  <label for="title" class="formlabel">Title</label>
@@ -50,6 +52,14 @@
           </div>
 		</form>
     </div>
+
+<!--     <div id="slider">
+    <img src="img/img.jpg" id="sliderimg"/>
+    <div id="left_holder"><img onClick="slideshow(-1)" id="sliderleftarrow" src="img/arrow_left.png"></div>
+    <div id="right_holder"><img onClick="slideshow(-1)" id="sliderrightarrow" src="img/arrow_right.png"></div>
+    </div> -->
+
+
     <div class="heading">
 	    Tweets
 	</div>
@@ -57,9 +67,14 @@
 		<% Post.all.each do |post|%>
 			<hr color="grey">
 			<div class="post_fname">
+<<<<<<< HEAD
 			   @<%=post.user.fname + post.user.lname %>
 
 			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/followed" class="submitBtn"> +</button>
+=======
+			   @<%=post.user.fname.capitalize + post.user.lname.capitalize %>
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
+>>>>>>> 77eab091408c355771e7411b33cffd215b416b7e
 			</div>
 			<div class="post_title">   
 			   <%= post.title %>
@@ -76,12 +91,32 @@
 </div>
 
 
-<script>
+<script type="text/javascript">
 	$(document).ready(function(){
 		$("#submit").click(function(){
 			alert("Your message has been posted!")
 		})
 	});	
+
+//Slideshow
+	// var imageCount = 1;
+	// var total = 5;
+
+	// function slideshow(x) {
+	// 	var image = document.getElementById('sliderimg');
+	// 	imageCount = imageCount + x;
+	// 	if(imageCount > total){imageCount = 1;}
+	// 	if(imageCount < 1){imageCount = total;}
+	// 	image.src = "img/img"+ imageCount +".jpg"
+	// }
+
+	// window.setInterval(function slide(){
+	// 	var image = document.getElementById('sliderimg');
+	// 	imageCount = imageCount + 1;
+	// 	if(imageCount > total){imageCount = 1;}
+	// 	if(imageCount < 1){imageCount = total;}
+	// 	image.src = "img/img"+ imageCount +".jpg";
+	// },5000);
 </script>
 
 
