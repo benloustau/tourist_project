@@ -83,6 +83,7 @@ post '/post_profile_tweet' do
 	redirect '/profile'
 end
 
+
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
 	@post = Post.new(params[:post])
@@ -91,19 +92,18 @@ post '/post_tweet' do
 	redirect '/home'
 end
 
-<<<<<<< HEAD
+get "/home" do
+  @posts = Post.order("created_at DESC")
+  erb :"post_tweet/home"
+end
+
 def date(time)
    time.strftime("%b %d %Y, %I:%M:%S %p")
 end
 
-get '/logout' do
-	flash[:notice] = "You have successfully been loged out"
-	redirect '/'
-	session.clear
-=======
+
 get '/contact_us' do
 	erb :contact_us
->>>>>>> 77eab091408c355771e7411b33cffd215b416b7e
 end
 
 post '/send_email' do
