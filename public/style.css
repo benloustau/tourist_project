@@ -346,6 +346,13 @@ body, html{
   font-size: 40px;
   margin-left: 15px;
   margin-bottom: 0;
+  display: inline-block;
+}
+
+#edit_profileBtn{
+  display: inline-block;
+  margin-left: 420px;
+  margin-bottom: 2px;
 }
 
 #profile_bio{
@@ -444,6 +451,12 @@ body, html{
   padding: 5px;
   border-radius: 5px;
   background-color: rgb(240, 240, 240);
+}
+
+#delete_profileBtn{
+  margin-left: 190px;
+  margin-top: 430px;
+  position: absolute;
 }
 
 
