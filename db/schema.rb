@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003193555) do
+ActiveRecord::Schema.define(version: 20141005204022) do
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 20141003193555) do
     t.string  "gender"
     t.date    "birthday"
     t.boolean "resident"
+    t.string  "interests"
+    t.string  "links_url"
+    t.string  "profile_image_url"
   end
 
   create_table "relationships", force: true do |t|
     t.integer "follower_id"
-    t.integer "followed_id"
+    t.integer "follwed_id"
   end
 
   create_table "users", force: true do |t|

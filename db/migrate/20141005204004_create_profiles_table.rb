@@ -6,6 +6,9 @@ class CreateProfilesTable < ActiveRecord::Migration
   		t.string :gender
   		t.date :birthday
   		t.boolean :resident
+  		t.string :interests
+  		t.string :links_url
+  		t.string :profile_image_url
   	end
   end
 end

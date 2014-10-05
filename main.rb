@@ -24,6 +24,7 @@ get '/' do
 end
 
 get '/home' do
+	@user = @current_user
 	erb :home
 end
 
@@ -33,10 +34,12 @@ post '/sign_in' do
  	if @user && @user.password  == params[:user][:password] 
  		session[:user_id] = @user.id
  		flash[:notice] = "You have successfully signed in"
- 		if @user == params[:user_id]
- 			redirect '/home'
- 		else
-			redirect '/profile/new'
+ 		User.all.each do |id|
+ 			if @current_user == params[:user_id]
+ 				redirect '/home'
+ 			else
+				redirect '/edit_profile'
+			end
 		end
   else
 		flash[:notice] = "Login failed please try again or sign up"
@@ -46,33 +49,39 @@ end
 
 post '/sign_up' do
 	User.create(params[:user])
+	session[:user_id] = user.id
 	flash[:notice] = "Your account has been created. Please login"
  	redirect '/'
 end	
 
+get '/profile' do
+  	@user = @current_user
+	erb :profile
+end
+
 get '/profile/new' do
+	@user = @current_user
 	@profile = Profile.new
 	erb :edit_profile
 end
 
+get '/edit_profile' do
+	@user = @current_user
+	erb :edit_profile
+end
+ 
 post '/edit_profile' do
 	puts "params are: #{params.inspect}"
 	@profile = Profile.new(params[:profile])
 	@profile.user = current_user
 	@profile.save
 	flash[:notice] = "Thank you for creating your profile."
-	redirect '/user/:id'
+	redirect '/profile'
 end
 
-get '/user/:id' do
-	if session[:user_id]
-		@user = User.find(params[:id])
-		redirect '/user/#{@user.id}'
-    erb :profile
-	else
-		flash[:notice] = "You must log in to view this page."
-		redirect '/'
-	end
+get '/user/:user_id' do
+	@user = User.find(params[:user_id])
+	erb :profile
 end
 
 post '/post_profile_tweet' do
@@ -95,12 +104,26 @@ end
 get "/home" do
   @posts = Post.order("created_at DESC")
   erb :"post_tweet/home"
+end 
+
+post '/update' do
+  @current_user.update_attributes(
+    fname: params[:user][:fname],
+    lname: params[:user][:lname],
+    email: params[:user][:email],
+    password: params[:user][:password],
+  )
+
+  @current_user.profile.update_attributes(
+    profile_image_url: params[:profile][:profile_image_url]
+  )
+  flash[:notice] = 'Your updates have been saved!'
+  redirect '/home'
 end
 
 def date(time)
    time.strftime("%b %d %Y, %I:%M:%S %p")
 end
-
 
 get '/contact_us' do
 	erb :contact_us
@@ -138,8 +161,10 @@ post '/user_id' do
 end	
 
 post '/follow' do
-
-end	
+  @current_user.follow(params[:user_id])
+  flash[:notice] = "You've got a new friend!"
+  redirect "/users/#{params[:user_id]}"
+end
 
 get '/logout' do
 	flash[:notice] = "You have successfully been loged out"
