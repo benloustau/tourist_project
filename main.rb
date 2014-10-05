@@ -47,15 +47,11 @@ post '/sign_in' do
  		flash[:notice] = "You have successfully signed in"
 		redirect'/home'
   	else
-<<<<<<< HEAD
 		flash[:notice] = "Login failed please try again or sign up"
     	redirect '/'
-  		
+  		flash[:notice] = "Login failed please try again or sign up"
+    	redirect '/'
 
-=======
-  	flash[:notice] = "Login failed please try again or sign up"
-    redirect '/'
->>>>>>> 3ab12ac1b0b67c67ec0af61f95608f9512ed828c
 	end
 end	
 
@@ -135,19 +131,14 @@ post '/send_email' do
 end
 
 
-
 post '/user_id' do
-	User.destroy(current_user.id)
+	@user = User.destroy(current_user.id)
+	@user.posts.each(&:destroy)
 	flash[:alert] = "This action is irriversible. Your User has been deleted"
 	redirect '/'
 	session.clear
 end	
 
-
-delete '/user_id' do |id|
-	 User.delete(params[:user]) 
-	redirect '/'
- end
 
 
 
