@@ -68,8 +68,8 @@
 			<hr color="grey">
 			<div class="post_fname">
 			@<%=post.user.fname.capitalize + " " + post.user.lname.capitalize %>
-  			<span><%= date(post.created_at) %></span>
-			<button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
+			   <span><%= date(post.created_at) %></span>
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
 			</div>
 			<div class="post_title">   
 			   <%=post.title %>

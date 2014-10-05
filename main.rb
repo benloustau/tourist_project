@@ -93,6 +93,10 @@ post '/post_tweet' do
 	redirect '/home'
 end
 
+def date(time)
+   time.strftime("%b %d %Y, %I:%M:%S %p")
+end	
+
 get '/contact_us' do
 	erb :contact_us
 end
