@@ -67,17 +67,12 @@
 		<% Post.all.each do |post|%>
 			<hr color="grey">
 			<div class="post_fname">
-<<<<<<< HEAD
-			   @<%=post.user.fname + post.user.lname %>
-
-			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/followed" class="submitBtn"> +</button>
-=======
-			   @<%=post.user.fname.capitalize + post.user.lname.capitalize %>
-			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
->>>>>>> 77eab091408c355771e7411b33cffd215b416b7e
+			@<%=post.user.fname.capitalize + " " + post.user.lname.capitalize %>
+  			<span><%= date(post.created_at) %></span>
+			<button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
 			</div>
 			<div class="post_title">   
-			   <%= post.title %>
+			   <%=post.title %>
 
 			</div>  
 			<div class="post_body"> 

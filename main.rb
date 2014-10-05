@@ -77,7 +77,7 @@ end
 
 post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
-	Post.order(created_at: :asc)
+	Post.order(created_at: :desc)
 	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
@@ -86,7 +86,7 @@ end
 
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
-	Post.order(created_at: :asc)
+	Post.order(created_at: :desc)
 	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
