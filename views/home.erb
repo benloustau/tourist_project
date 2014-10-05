@@ -55,13 +55,15 @@
 	</div>
 	<div id="tweets_method">
 		<% Post.all.each do |post|%>
-		    <hr color="grey">
+			<hr color="grey">
 			<div class="post_fname">
 			   @<%=post.user.fname + post.user.lname %>
-			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
+
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/followed" class="submitBtn"> +</button>
 			</div>
 			<div class="post_title">   
 			   <%= post.title %>
+
 			</div>  
 			<div class="post_body"> 
 				<%= post.body %>

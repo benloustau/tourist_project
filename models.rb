@@ -22,7 +22,7 @@ class Profile <ActiveRecord::Base
 end
 
 class Post <ActiveRecord::Base
-	belongs_to :user 
+	belongs_to :user
 end
 
 class Relationship < ActiveRecord::Base

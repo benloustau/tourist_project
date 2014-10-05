@@ -54,7 +54,6 @@ end
 
 post '/sign_up' do
 	User.create(params[:user])
-	session[:user_id] = @user.id
 	flash[:notice] = "Your account has been created. Please login"
  	redirect '/'
 end	
@@ -80,6 +79,7 @@ end
 
 post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
+	Post.order(created_at: :asc)
 	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
@@ -88,6 +88,7 @@ end
 
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
+	Post.order(created_at: :asc)
 	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
@@ -131,8 +132,11 @@ post '/user_id' do
 	session.clear
 end	
 
-post '/follow' do
-
+post '/followed' do
+	@followed = User.take(params[:user_id])
+	@followed.user = current_user.follows
+	@followed.save
+	redirect '/home'
 end	
 	
 
