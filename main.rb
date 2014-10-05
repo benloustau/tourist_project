@@ -94,6 +94,10 @@ post '/post_tweet' do
 	redirect '/home'
 end
 
+def date(time)
+   time.strftime("%b %d %Y, %I:%M:%S %p")
+end
+
 get '/logout' do
 	flash[:notice] = "You have successfully been loged out"
 	redirect '/'

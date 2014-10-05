@@ -5,6 +5,8 @@ class CreatePostsTable < ActiveRecord::Migration
   		t.string :title
   		t.string :body
   		t.datetime :created_at
+  		validates :title, presence: true, length: { minimum: 3 }
+  		validates :body, presence: true, length: { maximum: 150}
   	end
   end
 end
