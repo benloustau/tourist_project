@@ -115,8 +115,11 @@ post '/update' do
   redirect '/home'
 end
 
-get '/contact_us' do
+def date(time)
+   time.strftime("%b %d %Y, %I:%M:%S %p")
+end
 
+get '/contact_us' do
 	erb :contact_us
 end
 
