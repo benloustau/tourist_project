@@ -1,33 +1,16 @@
- 
-<div id="leftnav">
-	<ul>
-	  <li class="navlink"><a href="/home">Home</a></li>
-	  <li class="navlink"><a href="/profile">Profile</a></li>
-	  <li class="navlink"><a href="/">Logout</a></li>
-	</ul>
-</div>
-
 <div class="profile_wrapper">
+	
+	<div class="home_sidebar">
+		<nav class="home_nav">
+			<ul>
+		  	<li class="navlink"><a href="/home"><i class="fa fa-home fa-2x" class="fontawesome"></i><span class="nav_item">Home</span></a></li>
+		  	<li class="navlink"><a href="/profile"><i class="fa fa-user fa-2x" class="fontawesome"></i><span class="nav_item"> Profile</span></a></li>
+		  	<li class="navlink"><a href="/"><i class="fa fa-sign-out fa-2x" class="fontawesome"></i><span class="nav_item">Logout</span></a></li>
+			</ul>
+		</nav>
 
-	<section class="profile_top">
-		<header>
-			<h1 id="profile_name"><%= current_user.fname + " " + current_user.lname %></h1>
-			<button id="edit_profileBtn" onclick="window.location.href='/update_profile'" class="submitBtn">Update Profile</button>
-		</header>
-
-		<div id="profile_bio">
-			<img id="profile_pic" src= "/img/profile_pic.png" alt="profile-pic"/>
-			<div class="bio_content">
-				<p><%= current_user.profile.bio %></p>
-				<p><%= current_user.profile.gender %></p>
-				<p><%= current_user.profile.birthday %></p>
-			</div>
-		</div>
-	</section>
+		<hr id="sidebar_hr">
 		
-	<br clear="both">
-
-	<section class="profile_bottom">
 		<div id="profile_sidebar">
 			<h2 class="sidebar_content">INTERESTS</h2>
 			<h2 class="sidebar_content">FOLLOWERS</h2>
@@ -43,18 +26,44 @@
 			</ul>
 			<% end %>
 			<h2 class="sidebar_content">LINKS</h2>
+		</div>
+	</div>
 
+	<section id="profile_top">
+		<header>
+			<h1 id="profile_name"><%= current_user.fname + " " + current_user.lname %></h1>
+			<button id="edit_profileBtn" onclick="window.location.href='/update_profile'" class="submitBtn">Update Profile</button>
+			<div>
+				<form method="POST" action="/user_id">
+				 <input type="submit" class="submitBtn" id="delete_profileBtn" value="Delete Account">
+				</form>
+			</div>
+		</header>
+
+		<div id="profile_bio">
+			<img id="profile_pic" src= "/img/profile_pic.png" alt="profile-pic"/>
+			<div class="bio_content">
+				<p><%= current_user.profile.bio %></p>
+				<p><%= current_user.profile.gender %></p>
+				<p><%= current_user.profile.birthday %></p>
+			</div>
+		</div>
+	</section>
+		
+<!-- 	<br clear="both">
+ -->
+	<section id="profile_bottom">
 		<div id="profile_feed">
 
-			<h2 id="profile_feed_title">My Posts</h2>
-			<p id="create_post">Create a New Post</p>
+			<h2 id="profile_feed_title">My Tweets</h2>
+			<p id="create_post">Create a New Tweet</p>
 
 			<form method="POST" action="/post_profile_tweet" id="post_input">
-				<input name="[post]title" id="feed_title" type="text" placeholder="Title">
+				<input name="[post]title" class="title" type="text" placeholder="Title">
 				<br><br>
-				<textarea name="[post]body" id="feed_content" type="text" placeholder="Enter content here: "></textarea>
+				<textarea name="[post]body" class="textarea" type="text" placeholder="Enter content here"></textarea>
 				<br><br>
-				<input type="submit" id="feed_submitBtn" value="Post">
+				<input type="submit" class="post_submitBtn" value="Post">
 			</form>
 
 			<div id="profile_feed_method">
@@ -68,13 +77,6 @@
 					</div>
 					<br>
 				<% end %>	
-			</div>
-
-			<div>
-				<form method="POST" action="/user_id">
-				 <input type="submit" class="submitBtn" id="delete_profileBtn" value="Delete Account">
-				</form>
-
 			</div>
 
 		</div>

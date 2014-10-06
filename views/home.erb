@@ -11,24 +11,24 @@
 
 <div id="home_wrapper">
 
-	<div id="home_sidebar">
-		<nav id="home_nav">
+	<div class="home_sidebar">
+		<nav class="home_nav">
 			<ul>
-			  <li class="navlink"><a href="/home">Home</a></li>
-			  <li class="navlink"><a href="/profile">Profile</a></li>
-			  <li class="navlink"><a href="/">Logout</a></li>
+			  <li class="navlink"><a href="/home"><i class="fa fa-home fa-2x" class="fontawesome"></i><span class="nav_item">Home</span></a></li>
+			  <li class="navlink"><a href="/profile"><i class="fa fa-user fa-2x" class="fontawesome"></i><span class="nav_item"> Profile</span></a></li>
+			  <li class="navlink"><a href="/"><i class="fa fa-sign-out fa-2x" class="fontawesome"></i><span class="nav_item">Logout</span></a></li>
 			</ul>
 		</nav>
 
-		<hr>
+		<hr id="sidebar_hr">
 		
 		<p id="users_text">Users</p>
 		<ul id="home_sidebar_users">
 	    <% User.all.each do |account| %>
 	      <a href="users/<%= account.id %>">
-	        <li class="home_sidebar_users_list"><img src=></li>
-	        <li class="home_sidebar_users_list"><%= account.fname + " " + account.lname %></li>
-	      </a>
+	        <li class="home_sidebar_users_list"><img id="user_pic" src="/img/profile_pic.png"></li>
+	        <li class="home_sidebar_users_list" id="users_name"><%= account.fname + " " + account.lname %></li>
+	      </a><br>
 	    <% end %>
 	  </ul>
 	</div>
@@ -46,11 +46,11 @@
 			<div id="home_post">
 				<form action="/post_tweet" method="POST">
 				  <label for="title" class="formlabel">Title</label>
-				  <input type="text" name="[post]title" id="title">
+				  <input type="text" name="[post]title" class="title">
 				  <label for="content" class="formlabel" maxlength="150">Content</label>
-				  <textarea type="text" rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
+				  <textarea type="text" rows="4" cols="50" name="[post]body" class="textarea"></textarea>	
 				  <div class="float" id="submit">
-				      <input type="submit" value="Post" class="submitBtn"/>
+				      <input type="submit" value="Post" class="post_submitBtn"/>
 		      </div>
 				</form>
 	   	</div>
@@ -60,68 +60,28 @@
 	    <div id="left_holder"><img onClick="slideshow(-1)" id="sliderleftarrow" src="img/arrow_left.png"></div>
 	    <div id="right_holder"><img onClick="slideshow(-1)" id="sliderrightarrow" src="img/arrow_right.png"></div>
 	    </div> -->
-				<hr>
+			<hr>
 
-		    <div id="tweets_heading">Tweets</div>
+		  <div id="tweets_heading">Tweets</div>
+			<div id="tweets_method">
+				<% Post.all.each do |post|%>
+					<hr color="grey">
+					<div class="post_fname">
+					   @<%= post.user.fname.capitalize + " " + post.user.lname.capitalize %>
+					   <span><%= date(post.created_at) %></span>
+					   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/users/:id/follow" class="submitBtn"> +</button>
+					</div>
+					<div class="post_title">   
+					   <%=post.title %>
 
-				<div id="tweets_method">
-					<% Post.all.each do |post|%>
-					  <hr color="grey">
-						<div class="post_fname">
-						   @<%=post.user.fname.capitalize + " " + post.user.lname.capitalize %>
-						   <span><%= date(post.created_at) %></span>
-						   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
-						</div>
-						<div class="post_title"><%= post.title %></div>  
-						<div class="post_body"><%= post.body %></div>
-						<br>
-					<% end %>	
-				</div>
-			
-	    </div>
-		<span class="home_subheader">Create a new post</span>
-
-	<div id="home_post">
-		<form action="/post_tweet" method="POST">
-		  <label for="title" class="formlabel">Title</label>
-		  <input type="text" name="[post]title" id="title">
-		  <label for="content" class="formlabel" maxlength="150">Content</label>
-		  <textarea type="text" rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
-		  <div class="float" id="submit">
-		         <input type="submit" value="Post" class="submitBtn"/>
-          </div>
-		</form>
-    </div>
-
-<!--     <div id="slider">
-    <img src="img/img.jpg" id="sliderimg"/>
-    <div id="left_holder"><img onClick="slideshow(-1)" id="sliderleftarrow" src="img/arrow_left.png"></div>
-    <div id="right_holder"><img onClick="slideshow(-1)" id="sliderrightarrow" src="img/arrow_right.png"></div>
-    </div> -->
-
-
-    <div class="heading">
-	    Tweets
-	</div>
-	<div id="tweets_method">
-		<% Post.all.each do |post|%>
-			<hr color="grey">
-			<div class="post_fname">
-			   @<%= post.user.fname.capitalize + " " + post.user.lname.capitalize %>
-			   <span><%= date(post.created_at) %></span>
-			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/users/:id/follow" class="submitBtn"> +</button>
+					</div>  
+					<div class="post_body"> 
+						<%= post.body %>
+					</div>
+					<br>
+				
+				<% end %>
 			</div>
-			<div class="post_title">   
-			   <%=post.title %>
-
-			</div>  
-			<div class="post_body"> 
-				<%= post.body %>
-			</div>
-			<br>
-		
-		<% end %>
-	</div>
 
 </div>
 

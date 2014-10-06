@@ -9,43 +9,84 @@
 		</div>
 	<%end%>
 
-<div id="leftnav">
-	<ul>
-	  <li class="navlink"><a href="/home">Home</a></li>
-	  <li class="navlink"><a href="/profile">Profile</a></li>
-	  <li class="navlink"><a href="/">Logout</a></li>
-	</ul>
-</div>
-
 <div id="edit_wrapper">
-	
-	<h1 id="edit_greeting">Welcome, <em><%= current_user.fname if current_user %></em></h1>
-	<h2 id="edit_header">Create Your Profile</h2>
 
-	<form method="POST" action="/edit_profile" id="edit_profile_form">
-		<label for="upload_photo" class="edit_labels">Upload Photo</label>
-		<br><br><br>
-		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
-			<textarea name="[profile]bio" class="edit_textarea" placeholder="Max 250 characters"></textarea>
-		<br><br>
-		<label for="interests" class="edit_labels" id="interests_label">Interests</label>
-			<textarea name="[profile]interests" class="edit_textarea" placeholder="Max 250 characters"></textarea>	
-		<br><br>
-		<label for="birthday" class="edit_labels">Birthday</label>
-			<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" placeholder="mm/dd/yyyy">
-		<br><br>
-		<label for="gender" class="edit_labels">Gender</label>
-			<select type="text" name="[profile]gender" class="edit_inputs" id="gender">
-				<option value ="null">Choose One</option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select>	
-		<br><br><br>
-		<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
-			<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
-			<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
-		<br><br><br>
-		<input type="submit" id="edit_submitBtn">
-	</form>	
+	<div class="home_sidebar">
+		<nav class="home_nav">
+			<ul>
+			 	<li class="navlink"><a href="/home"><i class="fa fa-home fa-2x" class="fontawesome"></i><span class="nav_item">Home</span></a></li>
+			 	<li class="navlink"><a href="/profile"><i class="fa fa-user fa-2x" class="fontawesome"></i><span class="nav_item"> Profile</span></a></li>
+			 	<li class="navlink"><a href="/"><i class="fa fa-sign-out fa-2x" class="fontawesome"></i><span class="nav_item">Logout</span></a></li>
+			</ul>
+		</nav>
+
+		<hr id="sidebar_hr">
+			
+		<div id="profile_sidebar">
+			<h2 class="sidebar_content">INTERESTS</h2>
+			<h2 class="sidebar_content">FOLLOWERS</h2>
+			<% current_user.followers.each do |user| %>
+				<ul>
+					<li><%= user.fname + " " + user.lname %></h1></li>
+				</ul>
+			<% end %>
+			<h2 class="sidebar_content">FOLLOWS</h2>
+				<% current_user.follwed.each do |user| %>
+					<ul>
+						<li><%= user.fname + " " + user.lname %></li>
+					</ul>
+				<% end %>
+			<h2 class="sidebar_content">LINKS</h2>
+		</div>
+	</div>
+	
+	<div class="create_profile_form">
+		<h1 id="edit_greeting">Welcome, <em><%= current_user.fname if current_user %></em></h1>
+		<h2 id="edit_header">Create Your Profile</h2>
+
+		<form method="POST" action="/edit_profile" id="edit_profile_form">
+			<label for="upload_photo" class="edit_labels">Upload Photo</label>
+			<br><br><br>
+			<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
+				<textarea name="[profile]bio" class="edit_textarea" placeholder="Max 250 characters"></textarea>
+			<br><br>
+			<label for="interests" class="edit_labels" id="interests_label">Interests</label>
+				<textarea name="[profile]interests" class="edit_textarea" placeholder="Max 250 characters"></textarea>	
+			<br><br>
+			<label for="birthday" class="edit_labels">Birthday</label>
+				<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" placeholder="mm/dd/yyyy">
+			<br><br><br>
+			<label for="gender" class="edit_labels">Gender</label>
+				<select type="text" name="[profile]gender" id="gender">
+					<option value ="null">Choose One</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>	
+			<br><br><br>
+			<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
+				<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
+				<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
+			<br><br><br>
+			<input type="submit" class="submitBtn" id="create_formBtn">
+		</form>	
+	</div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -78,7 +78,7 @@ post '/edit_profile' do
 	redirect '/profile'
 end
 
-get '/user/:user_id' do
+get '/users/:user_id' do
 	@user = User.find(params[:user_id])
 	erb :profile
 end
@@ -183,7 +183,7 @@ post "/users/:id/follow" do
 	user = User.find(params[:id])
 	current_user.follow!(user) if user
 	flash[:notice] = "You have a new friend"
-	redirect '/profile'
+	redirect '/users/#{params[:user_id]}'
 end	
 
 # get "/users/:id/follow" do

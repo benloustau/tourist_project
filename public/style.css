@@ -30,7 +30,7 @@ body, html{
 /*******************************************************************/
 
 *{
-  color: #74777F;
+  color: #768696;
 }
 
 
@@ -41,20 +41,16 @@ body, html{
 #name{
   margin:0 auto;
   position: absolute;
-  margin-top:2.5%;
+  margin-top: 100px;
   margin-left: 25%;
-    color: black;
-    background: white;
-    opacity:.7;
-    text-align: center;
-    border-radius: 20px;
-    height: 100px;
-    width: 700px;
-    font-family: Amatic SC;
+  background-color: #F1F5FF;
+  text-align: center;
+  border-radius: 20px;
+  height: 100px;
+  width: 700px;
 }
 
 #name_color{
-  color:#00FF00;
   font-size: 40px;
   font-weight: bold;
   padding-top: 25px;
@@ -62,21 +58,18 @@ body, html{
 }
 
 #intro{
-  color: white;
-  background: white;
-  opacity:.7;
+  background-color: #F1F5FF;
   text-align: center;
-  border-radius: 5%;
-  height: 500px;
+  border-radius: 20px;
+  height: 400px;
   width: 700px;
   margin-top: 8%;
-  font-family: Amatic SC;
   }
 
 .label_color{
-  color:black;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 200;
+  font-size: 16px;
+  text-align: left;
 }  
 
 #left{
@@ -88,29 +81,45 @@ body, html{
 
  #form{
   text-align: center;
-  font-weight: bold;
-  margin-top: 30%;
+  font-weight: 200;
+  margin-top: 60px;
   padding-top: 10px;
  }
 
  .inputs{
   background-color: white;
-  box-shadow: 3px 3px gray;
   border-radius: 5px;
-  color:black;
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
+}
+
+.inputs:focus{
+  outline: none;
 }
 
  .submitBtn{
-  background-color: aquamarine;
-  color:black;
-  font-weight: bold;
+  background-color: #53DADB;
+  font-weight: 200;
   border-radius: 5px;
-  box-shadow: 2px 2px black;
+  color: #fff;
+  border: none;
+  padding: 5px;
+ }
+
+ #create_profileBtn{
+  width: 120px;
+ }
+
+ #sign-inBtn{
+  width: 100px;
+  margin-top: 30px;
  }
 
  #line{
   height:90%;
-  border:1px solid gray;
+  border: 1px solid #53DADB;
   position:relative;
   float:left;
   margin-top:4%;
@@ -125,8 +134,8 @@ body, html{
 
  #form1{
   text-align: center;
-  font-weight: bold;
-  margin-top: 43%;
+  font-weight: 200;
+  margin-top: 120px;
   padding-top: 10px;
  }
 
@@ -166,64 +175,78 @@ body, html{
   margin-bottom: 20px;
 }
 
-#home_sidebar{
+.home_sidebar{
   float: left;
-  width: 200px;
+  width: 220px;
   height: auto;
   background-color: #F1F5FF;
   border-radius: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
-#home_nav {
+.fontawesome{
+  margin-left: 10px;
+}
+
+.home_nav {
   border-radius: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-#home_nav ul {
+.home_nav ul {
   list-style: none;
+  padding-left: 20px;
+}
+
+.nav_item {
+  margin-left: 30px;
 }
 
 .navlink {
   padding: 10px 10px 0; 
 }
 
-.navlink a:link {
+.navlink a {
   text-decoration: none;
-  color:#000;
 }
 
-/*.navlink a:visited {
-  color:#00FF00;
+#sidebar_hr{
+  width: 200px;
 }
-
-.navlink a:hover {
-  color: #FF00FF;
-}
-
-.navlink a:active {
-  color: #0000FF;
-}*/
 
 #users_text{
-  text-align: center;
-  font-size: 20px;
+  margin-left: 20px;
+  font-size: 26px;
 }
 
 #home_sidebar_users{
   list-style: none;
   margin-bottom: 30px;
+  padding-left: 0;
+  margin: 18px;
 }
 
 #home_sidebar_users a{
   text-decoration: none;
-  color: #000;
 }
 
 .home_sidebar_users_list{
   margin-bottom: 5px;
+  display: inline-block;
+}
+
+#user_pic{
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#users_name{
+  padding-bottom: 10px;
+  margin-left: 10px;
 }
 
 #posts {
@@ -237,37 +260,29 @@ body, html{
 
 #welcome_heading, #tweets_heading {
   font-size:20px;
-  max-width: 600px;
-  width: auto;
   border-radius: 20px;  
   font-weight: bold;
-  padding: 4px 10px 5px;  
   margin-top: 20px;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-family: New York;
-  text-align: center;
 }
 
 #welcome_heading{
   font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+  color: #53DADB;
 }
 
 
 .home_subheader{
-  font-size:18px;
-  border-radius: 20px;  
-  border: 3px solid grey;
+  font-size: 20px;
   font-weight: bold;
   padding: 4px 10px 5px;  
   display:block;
-  margin-top:  10px;
+  margin-top:  40px;
   margin-left: 10px;
 }   
 
 #home_post{
-  border:3px solid grey;
-  border-radius: 20px;
   height:auto;
   margin-top: 10px;
   margin-left: 10px;
@@ -276,48 +291,50 @@ body, html{
 
 .formlabel{
   font-size: 16px;
-  color: white;
   display: block;
   padding-top: 10px; 
   padding-bottom: 2px; 
   padding-left: 10px;
 } 
 
-#title {
-  border:1px solid #7ac9b7;
-  border-radius:20px;
-  margin: 5px;
-  color: black;
+.title {
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   height: 35px;
+  width: 400px;
   padding: 10px;
+  border: none;
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
 }
 
-#textarea {
-  border:1px solid #7ac9b7;
-  border-radius:20px;
-  margin: 5px;
-  color: black;
+.textarea {
+  border-radius: 10px;
+  margin-top: 5px;
   padding: 10px;
-  width: 380px;
+  width: 98%;
+  border: none;
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
+
 }
 
-#textarea:focus{
+#textarea:focus, #title:focus{
   outline: none;
 }
 
-#submit {
-  font-size: 16px;
-  margin: 8px 0 12px 0;
-  text-align: center;
+.post_submitBtn{
+  background-color: #53DADB;
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  padding: 5px;
+  margin-top: 10px;
+  color: #fff;
 }
 
-#submit input {
-  background-color: aquamarine;
-  color:white;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 2px 2px black;
-} 
+.post_submitBtn:hover{
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
+}
 
 /*.float {
   display: inline-block;
@@ -340,7 +357,9 @@ body, html{
 */
 
 #tweets_heading{
-  
+  font-size: 30px;
+  margin-left: 20px;
+  color: #53DADB;
 }
 
 #tweets_method hr{
@@ -350,8 +369,6 @@ body, html{
 }
 
 #tweets_method {
-  border: 3px solid grey;
-  border-radius: 20px;
   margin: 0 auto;
   padding: 25px;
   margin-top: 20px;
@@ -359,16 +376,13 @@ body, html{
 }
 
 .post_fname {
-  color: #FFF;
   font-weight: bold;
 }
 
 .post_title {
-  color: #FFF;
 }
 
 .post_body {
-  color: #FFF;
 }
 
 /*#slider {
@@ -439,7 +453,7 @@ body, html{
 /****************************************************************/
 
 .profile_wrapper{
-  width: 800px;
+  width: 1100px;
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
@@ -447,25 +461,34 @@ body, html{
   font-family: sans-serif;
 }
 
-.profile_top{
-  background-color: rgba(255, 255, 255, 0.7);
+#profile_top{
+  width: 800px;
+  background-color: #F1F5FF;
   padding: 10px;
   padding-top: 0;
   border-radius: 20px;
+  float: left;
+  margin-top: 20px;
 }
 
 #profile_name{ 
   padding-top: 15px;
+  margin-left: 20px;
   font-size: 40px;
-  margin-left: 15px;
   margin-bottom: 0;
   display: inline-block;
 }
 
 #edit_profileBtn{
   display: inline-block;
-  margin-left: 420px;
+  margin-left: 410px;
   margin-bottom: 2px;
+}
+
+#delete_profileBtn{
+  display: inline-block;
+  margin-left: 661px;
+  margin-bottom: 5px;
 }
 
 #profile_bio{
@@ -476,40 +499,35 @@ body, html{
   max-width: 200px;
   max-height: 200px;
   border-radius: 50%;
-  float: left;
   margin-left: 28px;
   margin-bottom: 20px;
+  float: left;
 }
 
 #bio_section{
   float: left;
-  margin-left: 80px;
 }
 
 .bio_content{
   background-color: #fff;
-  width: 500px;
   margin-left: 280px;
   border-radius: 10px;
   height: 200px;
+  width: 500px;
+
 }
 
 .bio_content p{
   padding: 10px;
 }
 
-.profile_bottom{
-  margin-top: 0;
-  border-radius: 20px;
+#profile_bottom{
 }
 
 #profile_sidebar{
-  width: 33%;
-  float: left;
-  height: 800px;
-  background-color: rgba(255, 255, 255, 0.7);
+  height: 600px;
+  background-color: #F1F5FF;
   border-radius: 20px;
-  margin-right: 20px;
 }
 
 .sidebar_content{
@@ -519,11 +537,13 @@ body, html{
 }
 
 #profile_feed{
-  float: left;
-  width: 64%;
-  height: 800px;
-  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  height: auto;
+  width: 800px;
+  padding-bottom: 20px;
+  background-color: #F1F5FF;
   border-radius: 20px;
+  float: left;
 } 
 
 #profile_feed_title{
@@ -537,42 +557,6 @@ body, html{
 #post_input{
   margin-left: 20px;
 }
-
-#feed_title{
-  width: 470px;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 5px;
-}
-
-#feed_content{
-  width: 470px;
-  height: 50px;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 5px;
-  border: none;
-}
-
-#feed_title:focus, #feed_content:focus{
-  outline: none;
-}
-
-#feed_submitBtn{
-  width: 100px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgb(240, 240, 240);
-}
-
-#delete_profileBtn{
-  margin-left: 190px;
-  margin-top: 430px;
-  position: absolute;
-}
-
-
 
 /****************************************************************/
 /************************* END OF PROFILE ***********************/
@@ -596,9 +580,15 @@ body, html{
 }
 
 #edit_wrapper{
-  width: 800px;
+  width: 1100px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+}
+
+.create_profile_form{
+  width: 800px;
+  float: left;
+  background-color: #F1F5FF;
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -611,13 +601,9 @@ body, html{
   margin: 0 auto;
 }
 
-#bio_label{
+#bio_label, #interests_label{
   vertical-align: top;
 }
-
-#interests_label{
-  vertical-align: top;
-  }
 
 .edit_textarea{
   margin-left: 50px;
@@ -626,6 +612,7 @@ body, html{
   width: 500px;
   height: 60px;
   font-size: 13px;
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
 }
 
 .edit_textarea:focus{
@@ -640,6 +627,8 @@ body, html{
   margin-left: 50px;
   border-radius: 5px;
   padding: 6px;
+  border: none;
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
 }
 
 .edit_inputs:focus{
@@ -666,20 +655,17 @@ body, html{
   width: 17px;
 }
 
-#edit_submitBtn{
+#create_formBtn{
   width: 100px;
-  padding: 5px;
-  margin-left: 42%;
-  border-radius: 5px;
-  background-color: rgb(240, 240, 240);
+  margin-left: 320px;
 }
 
-#edit_submitBtn:hover{
-  border: 1px solid #000;
+#create_formBtn:hover{
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
 }
 
 /****************************************************************/
-/************************ End of PROFILE ************************/
+/********************* End of EDIT_PROFILE **********************/
 /****************************************************************/
 
 
