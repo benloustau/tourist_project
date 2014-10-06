@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
 	has_one :profile
 	has_many :posts, dependent: :destroy
 	has_many :relationships, foreign_key: :follower_id, dependent: :destroy #if I destroy one of the members then destroy this relationship as well
+	has_many :reverse_relationships, foreign_key: :followed_id, class_name: "Relationship"
 	has_many :followers, through: :relationships
-	has_many :followeds, through: :relationships
+	has_many :followed, through: :relationships, source: :followed
 
 	def full_name
 		if !fname.nil? && !lname.nil?
@@ -14,6 +15,10 @@ class User < ActiveRecord::Base
 			lname
 		end
 	end
+
+	def follow!(user)
+		followed << user
+	end	
 	
 end 
 
