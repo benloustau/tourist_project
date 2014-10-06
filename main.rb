@@ -24,7 +24,7 @@ get '/' do
 end
 
 get '/home' do
-	@user = @current_user
+	@user = current_user
 	erb :home
 end
 
@@ -55,18 +55,18 @@ post '/sign_up' do
 end	
 
 get '/profile' do
-  	@user = @current_user
+  	@user = current_user
 	erb :profile
 end
 
 get '/profile/new' do
-	@user = @current_user
+	@user = current_user
 	@profile = Profile.new
 	erb :edit_profile
 end
 
 get '/edit_profile' do
-	@user = @current_user
+	@user = current_user
 	erb :edit_profile
 end
  
@@ -100,17 +100,25 @@ post '/post_tweet' do
 	redirect '/home'
 end
 
-post '/update' do
-  @current_user.update_attributes(
-    fname: params[:user][:fname],
-    lname: params[:user][:lname],
-    email: params[:user][:email],
-    password: params[:user][:password],
-  )
+get '/update_profile' do
+	@user = @current_user
+	erb :update_profile
+end
 
-  @current_user.profile.update_attributes(
-    profile_image_url: params[:profile][:profile_image_url]
-  )
+post '/update_profile' do
+  puts "params are: #{params.inspect}"
+  @user = @current_user
+  # @user = User.update(params[:user])
+  # @user = current_user
+  # @user.save
+
+  # @profile = Profile.update(params[:profile])
+  # @profile.user = current_user
+  # @profile.save
+  @current_user.update_attributes(params[:user])
+
+  @current_user.profile.update_attributes(params[:profile])
+
   flash[:notice] = 'Your updates have been saved!'
   redirect '/home'
 end
