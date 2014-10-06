@@ -35,8 +35,6 @@
 
 	<div id="posts_wrapper">
 
-		<div id="header"></div>
-
 		<div id="posts">
 			<div id="welcome_heading">
 				Welcome,  
@@ -81,6 +79,48 @@
 				</div>
 			
 	    </div>
+		<span class="home_subheader">Create a new post</span>
+
+	<div id="home_post">
+		<form action="/post_tweet" method="POST">
+		  <label for="title" class="formlabel">Title</label>
+		  <input type="text" name="[post]title" id="title">
+		  <label for="content" class="formlabel" maxlength="150">Content</label>
+		  <textarea type="text" rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
+		  <div class="float" id="submit">
+		         <input type="submit" value="Post" class="submitBtn"/>
+          </div>
+		</form>
+    </div>
+
+<!--     <div id="slider">
+    <img src="img/img.jpg" id="sliderimg"/>
+    <div id="left_holder"><img onClick="slideshow(-1)" id="sliderleftarrow" src="img/arrow_left.png"></div>
+    <div id="right_holder"><img onClick="slideshow(-1)" id="sliderrightarrow" src="img/arrow_right.png"></div>
+    </div> -->
+
+
+    <div class="heading">
+	    Tweets
+	</div>
+	<div id="tweets_method">
+		<% Post.all.each do |post|%>
+			<hr color="grey">
+			<div class="post_fname">
+			   @<%= post.user.fname.capitalize + " " + post.user.lname.capitalize %>
+			   <span><%= date(post.created_at) %></span>
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/users/:id/follow" class="submitBtn"> +</button>
+			</div>
+			<div class="post_title">   
+			   <%=post.title %>
+
+			</div>  
+			<div class="post_body"> 
+				<%= post.body %>
+			</div>
+			<br>
+		
+		<% end %>
 	</div>
 
 </div>
