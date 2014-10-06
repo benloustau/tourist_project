@@ -1,4 +1,4 @@
-
+ 
 <div id="leftnav">
 	<ul>
 	  <li class="navlink"><a href="/home">Home</a></li>
@@ -37,7 +37,11 @@
 			</ul>
 			<% end %>
 			<h2 class="sidebar_content">FOLLOWS</h2>
-			
+			<% current_user.follwed.each do |user| %>
+			<ul>
+			<li><%= user.fname + " " + user.lname %></li>
+			</ul>
+			<% end %>
 			<h2 class="sidebar_content">LINKS</h2>
 
 		<div id="profile_feed">

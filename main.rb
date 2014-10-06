@@ -94,7 +94,7 @@ end
 
 post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
-	@post = Post.new.order(:created_at).last(10)
+	@post = Post.new(params[:post])
 	@post.user = current_user
 	@post.save
 	redirect '/profile'
@@ -171,11 +171,18 @@ post '/user_id' do
 	session.clear
 end	
 
-put "/users/:id/follow" do
+get "/users/:id/follow" do
 	user = User.find(params[:id])
 	current_user.follow!(user) if user
 	flash[:notice] = "You have a new friend"
 	user.save
+	redirect '/home'
+end	
+
+post "/users/:id/follow" do
+	user = User.find(params[:id])
+	current_user.follow!(user) if user
+	flash[:notice] = "You have a new friend"
 	redirect '/profile'
 end	
 
