@@ -35,8 +35,8 @@
 	</div>
 	<div id="posts">
 		<div class="heading">
-			Welcome, 
-			<%@user.fname if @user %>
+			Welcome,  
+			<%= current_user.fname.capitalize + " " + current_user.lname.capitalize %>
 		</div>
 
 		<span class="home_subheader">Create a new post</span>
@@ -45,7 +45,7 @@
 		<form action="/post_tweet" method="POST">
 		  <label for="title" class="formlabel">Title</label>
 		  <input type="text" name="[post]title" id="title">
-		  <label for="content" class="formlabel">Content</label>
+		  <label for="content" class="formlabel" maxlength="150">Content</label>
 		  <textarea type="text" rows="4" cols="50" name="[post]body"  id="textarea"></textarea>	
 		  <div class="float" id="submit">
 		         <input type="submit" value="Post" class="submitBtn"/>
