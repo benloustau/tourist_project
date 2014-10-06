@@ -92,6 +92,7 @@ post '/post_profile_tweet' do
 	redirect '/profile'
 end
 
+
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
 	@post = Post.new(params[:post])
