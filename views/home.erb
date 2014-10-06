@@ -65,20 +65,26 @@
 	</div>
 	<div id="tweets_method">
 		<% Post.all.each do |post|%>
-		    <hr color="grey">
+			<hr color="grey">
 			<div class="post_fname">
+<<<<<<< HEAD
 			   @<%= post.user.fname.capitalize + " " + post.user.lname.capitalize %>
+=======
+			@<%=post.user.fname.capitalize + " " + post.user.lname.capitalize %>
+>>>>>>> b8365e2cdc7889d5f75f65dd9f0cb23ca0fe4352
 			   <span><%= date(post.created_at) %></span>
-			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/follow" class="submitBtn"> +</button>
+			   <button type="button" value="plus" name="plus" formmethod="POST" formaction="/users/:id/follow" class="submitBtn"> +</button>
 			</div>
 			<div class="post_title">   
-			   <%= post.title %>
+			   <%=post.title %>
+
 			</div>  
 			<div class="post_body"> 
 				<%= post.body %>
 			</div>
 			<br>
-		<% end %>	
+		
+		<% end %>
 	</div>
 		
     </div>

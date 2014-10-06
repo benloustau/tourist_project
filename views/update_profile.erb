@@ -37,11 +37,14 @@
     </form>
 
 	<form method="POST" action="/update_profile" id="update_profile_form">
-		<label for="image_url" class="edit_labels">Image URL</label>	
-			<input type="text" name="[profile]profile_image_url" value="<%= current_user.profile.profile_image_url %>" class="edit_inputs">
+		<!-- <label for="image_url" class="edit_labels">Image URL</label>	
+			<input type="text" name="[profile]profile_image_url" value="<%= current_user.profile.profile_image_url %>" class="edit_inputs"> -->
 		<br><br><br>
 		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
 			<textarea name="[profile]bio" id="edit_textarea" value="<%= current_user.profile.bio %>"></textarea>
+		<br><br>
+		<label for="interests" class="edit_labels" id="interests_label">Interests</label>
+			<textarea name="[profile]interests" class="edit_textarea" value="<%= current_user.profile.interests %>"></textarea>	
 		<br><br>
 		<label for="birthday" class="edit_labels">Birthday</label>
 			<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" value="<%= current_user.profile.birthday %>">

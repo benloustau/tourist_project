@@ -49,7 +49,6 @@ end
 
 post '/sign_up' do
 	User.create(params[:user])
-	session[:user_id] = user.id
 	flash[:notice] = "Your account has been created. Please login"
  	redirect '/'
 end	
@@ -84,6 +83,15 @@ get '/user/:user_id' do
 	erb :profile
 end
 
+
+def date(time)
+   time.strftime("%b %d %Y, %I:%M:%S %p")
+end	
+
+# def post(post)
+# 	post.order(:created_at).last(10)
+# end	
+
 post '/post_profile_tweet' do
 	puts "params are: #{params.inspect}"
 	@post = Post.new(params[:post])
@@ -95,7 +103,7 @@ end
 
 post '/post_tweet' do
 	puts "params are: #{params.inspect}"
-	@post = Post.new(params[:post])
+	@post= Post.new(params[:post])
 	@post.user = current_user
 	@post.save 
 	redirect '/home'
@@ -163,11 +171,42 @@ post '/user_id' do
 	session.clear
 end	
 
-post '/follow' do
-  @current_user.follow(params[:user_id])
-  flash[:notice] = "You've got a new friend!"
-  redirect "/users/#{params[:user_id]}"
-end
+get "/users/:id/follow" do
+	user = User.find(params[:id])
+	current_user.follow!(user) if user
+	flash[:notice] = "You have a new friend"
+	user.save
+	redirect '/home'
+end	
+
+post "/users/:id/follow" do
+	user = User.find(params[:id])
+	current_user.follow!(user) if user
+	flash[:notice] = "You have a new friend"
+	redirect '/profile'
+end	
+
+# get "/users/:id/follow" do
+# 	user = User.find(params[:id])
+# 	current_user.follow!(user) if user
+# 	flash[:notice] = "You have a new friend"
+# 	redirect '/home'
+# end	
+
+
+# post '/followed' do
+# 	@followed = User.take(params[:user_id])
+# 	@followed.user = current_user.follows
+# 	@followed.save
+# 	redirect '/home'
+# end	
+
+# post '/follow' do
+#   @current_user.follow(params[:user_id])
+#   flash[:notice] = "You've got a new friend!"
+#   redirect "/users/#{params[:user_id]}"
+# end
+
 
 get '/logout' do
 	flash[:notice] = "You have successfully been loged out"
