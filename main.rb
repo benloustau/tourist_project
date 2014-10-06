@@ -97,14 +97,15 @@ post '/post_tweet' do
 	puts "params are: #{params.inspect}"
 	@post = Post.new(params[:post])
 	@post.user = current_user
+	@post.length(10)
 	@post.save
 	redirect '/home'
 end
 
 get "/home" do
   @posts = Post.order("created_at DESC")
-  erb :"post_tweet/home"
-end 
+  erb :home
+end
 
 post '/update' do
   @current_user.update_attributes(
