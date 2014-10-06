@@ -1,0 +1,66 @@
+<% if flash[:notice] %>
+		<div class="flash notice">
+		<%= flash[:notice] %>
+		</div>
+	<% end %>	
+	<% if flash[:alert] %>
+		<div class="flash notice">
+		<%= flash[:alert] %>
+		</div>
+	<%end%>
+
+<div id="leftnav">
+	<ul>
+	  <li class="navlink"><a href="/home">Home</a></li>
+	  <li class="navlink"><a href="/profile">Profile</a></li>
+	  <li class="navlink"><a href="/">Logout</a></li>
+	</ul>
+</div>
+
+<div id="update_wrapper">
+	
+	<h2 id="update_header">Update Your Profile</h2>
+
+	<form method="POST" action="/update_profile">
+		<label for="fname" class="edit_labels">First Name</label>
+      <input type="text" name="[user]fname" value="<%= current_user.fname %>" class="edit_inputs">
+      <br><br>
+    <label for="lname" class="edit_labels">Last Name</label>
+      <input type="text" name="[user]lname" value="<%= current_user.lname %>" class="edit_inputs">
+      <br><br>
+    <label for="email" class="edit_labels">Email Address</label>
+      <input type="text" name="[user]email" value="<%= current_user.email %>" class="edit_inputs">
+    	<br><br>
+    <label for="password" class="edit_labels">Password</label>  
+      <input type="password" name="[user]password" value="<%= current_user.password %>" class="edit_inputs">
+      <br><br>
+    </form>
+
+	<form method="POST" action="/update_profile" id="update_profile_form">
+		<label for="image_url" class="edit_labels">Image URL</label>	
+			<input type="text" name="[profile]profile_image_url" value="<%= current_user.profile.profile_image_url %>" class="edit_inputs">
+		<br><br><br>
+		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
+			<textarea name="[profile]bio" id="edit_textarea" value="<%= current_user.profile.bio %>"></textarea>
+		<br><br>
+		<label for="birthday" class="edit_labels">Birthday</label>
+			<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" value="<%= current_user.profile.birthday %>">
+		<br><br>
+		<label for="gender" class="edit_labels">Gender</label>
+			<select type="text" name="[profile]gender" class="edit_inputs" id="gender">
+				<option value ="null">Choose One</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>	
+		<br><br><br>
+		<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
+			<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
+			<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
+		<br><br><br>
+      	<input type="submit" value="Save Changes" class="submitBtn" id="save_btn">
+	</form>	
+
+</div>
+
+
+
