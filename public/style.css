@@ -29,7 +29,9 @@ body, html{
 /************************ end of layout.erb ************************/
 /*******************************************************************/
 
-
+*{
+  color: #74777F;
+}
 
 
 /*******************************************************************/
@@ -139,38 +141,48 @@ body, html{
 /*************************************************************************/
 /******************************* home.erb ********************************/
 /*************************************************************************/
-#wrapper {
+
+#home_wrapper{
+  width: 1100px;
+  margin: 0 auto;
+}
+
+#posts_wrapper {
   width: 800px;
   height: 100%;
   margin: 0 auto;
   margin-top: 20px;
   padding-top: 0;
-  font-family: sans-serif;}
+  font-family: sans-serif;
+  float: left;
+}
 
 #header {
-  border: 1px solid black;
-  background: rgba(255,255,255, 0.7);
-  width: 900px;
+  background-color: #F1F5FF;
   height: 150px;
   margin: 0 auto;
   margin-top: 2%;
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 
-#leftnav {
-  border: 1px solid black;
-  box-shadow: 0px 3px 0px 0px rgba(50, 50, 50, 0.7);
-  background: rgba(255,255,255, 0.7);
-  width: 150px;
-  height: 150px;
-  margin-top: 190px;
-  margin-left: 45px;
-  position: fixed;
+#home_sidebar{
+  float: left;
+  width: 200px;
+  height: auto;
+  background-color: #F1F5FF;
   border-radius: 20px;
-
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 35px;
 }
 
-#leftnav ul {
+#home_nav {
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+#home_nav ul {
   list-style: none;
 }
 
@@ -180,10 +192,10 @@ body, html{
 
 .navlink a:link {
   text-decoration: none;
-  color:#FF0000;
+  color:#000;
 }
 
-.navlink a:visited {
+/*.navlink a:visited {
   color:#00FF00;
 }
 
@@ -193,49 +205,41 @@ body, html{
 
 .navlink a:active {
   color: #0000FF;
+}*/
+
+#users_text{
+  text-align: center;
+  font-size: 20px;
 }
 
+#home_sidebar_users{
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+#home_sidebar_users a{
+  text-decoration: none;
+  color: #000;
+}
+
+.home_sidebar_users_list{
+  margin-bottom: 5px;
+}
 
 #posts {
-  border: 1px solid black;
-  width: 900px;
   height: auto;
-  background: rgba(255,255,255, 0.7);
+  background-color: #F1F5FF;
   margin: 0 auto;
-  margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 20px;
+  padding: 10px;
 }
 
-#leftnav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navlink li {
-  padding: 5px 0; 
-}
-
-.navlink a {
-  /*text-decoration: none;*/
-}
-.navlink div {
-  border: 1px solid red;
-  text-align: center;
-  padding: 3px;
-  margin: 5px;
-  border-radius: 20px;
-  background: #F3eeff;
-}
-
-.heading {
+#welcome_heading, #tweets_heading {
   font-size:20px;
-  max-width: 400px;
+  max-width: 600px;
   width: auto;
   border-radius: 20px;  
-  border: 3px solid grey;
-  color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   margin-top: 20px;
@@ -245,13 +249,15 @@ body, html{
   text-align: center;
 }
 
+#welcome_heading{
+  font-size: 40px;
+}
+
 
 .home_subheader{
   font-size:18px;
-  width: 400px;
   border-radius: 20px;  
   border: 3px solid grey;
-  color: #FFF;
   font-weight: bold;
   padding: 4px 10px 5px;  
   display:block;
@@ -262,10 +268,10 @@ body, html{
 #home_post{
   border:3px solid grey;
   border-radius: 20px;
-  width:400px;
   height:auto;
   margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 50px;
 }
 
 .formlabel{
@@ -332,6 +338,11 @@ body, html{
   transform: translateY(-5px);
 }
 */
+
+#tweets_heading{
+  
+}
+
 #tweets_method hr{
   width: 800px;
   text-align: center;
@@ -339,7 +350,6 @@ body, html{
 }
 
 #tweets_method {
-  width: 850px;
   border: 3px solid grey;
   border-radius: 20px;
   margin: 0 auto;
