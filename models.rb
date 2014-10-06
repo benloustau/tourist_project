@@ -28,11 +28,8 @@ end
 
 class Post <ActiveRecord::Base
 	belongs_to :user
-<<<<<<< HEAD
-=======
 	validates :title, presence: true, length: { minimum: 2 }
  	validates :body, presence: true, length: { maximum: 150 }
->>>>>>> 74ff673243b1e7b548dc4120d402a00919ea053d
 end
 
 class Relationship < ActiveRecord::Base
