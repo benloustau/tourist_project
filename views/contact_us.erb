@@ -9,17 +9,33 @@
 		</div>
 	<%end%>
 
-<div id="contact_main">
-	<div id="form2">
-		<form method="POST" action="/send_email">
-		<label for="from">FROM:</label>
-		<input type="text" name="from" class="inputs" placeholder="Enter Your Email"></br></br></br>
-		<label for="comment">COMMENT</label></br>
-		<textarea name="comment" rows="12" cols="50" class="inputs"></textarea></br></br>
-		<div id="contact_submit">
-		<input type="submit" class="submitBtn">
-		</div>
-		</form>
+<div id="contact_wrapper">
 
+	<div class="home_sidebar">
+			<nav class="home_nav">
+				<ul>
+				  <li class="navlink"><a href="/home"><i class="fa fa-home fa-2x" class="fontawesome"></i><span class="nav_item">Home</span></a></li>
+				  <li class="navlink"><a href="/profile"><i class="fa fa-user fa-2x" class="fontawesome"></i><span class="nav_item"> Profile</span></a></li>
+				  <li class="navlink"><a href="/contact_us"><i class="fa fa-envelope-square fa-2x" class="fontawesome"></i><span class="nav_item"> Contact Us </span></a></li>
+				  <li class="navlink"><a href="/"><i class="fa fa-sign-out fa-2x" class="fontawesome"></i><span class="nav_item">Logout</span></a></li>
+				</ul>
+			</nav>
 	</div>
+
+	<div id="contact_form_wrapper">
+		<h1 id="contact_title">Contact Us</h1>
+
+		<div id="contact_main">
+			<div id="form2">
+				<form method="POST" action="/send_email">
+				<label for="from">FROM:</label>
+				<input type="text" name="from" class="inputs" placeholder="Enter Your Email" id="email_input"></br></br></br>
+				<label for="comment">COMMENT</label></br>
+				<textarea name="comment" rows="12" cols="50" class="inputs"></textarea></br></br>
+				<input type="submit" class="submitBtn" id="contact_submitBtn">
+				</form>
+			</div>
+		</div>
+	</div>
+
 </div>

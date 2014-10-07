@@ -9,60 +9,66 @@
 		</div>
 	<%end%>
 
-<div id="leftnav">
-	<ul>
-	  <li class="navlink"><a href="/home">Home</a></li>
-	  <li class="navlink"><a href="/profile">Profile</a></li>
-	  <li class="navlink"><a href="/">Logout</a></li>
-	</ul>
-</div>
-
 <div id="update_wrapper">
-	
-	<h2 id="update_header">Update Your Profile</h2>
 
-	<form method="POST" action="/update_profile">
-		<label for="fname" class="edit_labels">First Name</label>
-      <input type="text" name="[user]fname" value="<%= current_user.fname %>" class="edit_inputs">
-      <br><br>
-    <label for="lname" class="edit_labels">Last Name</label>
-      <input type="text" name="[user]lname" value="<%= current_user.lname %>" class="edit_inputs">
-      <br><br>
-    <label for="email" class="edit_labels">Email Address</label>
-      <input type="text" name="[user]email" value="<%= current_user.email %>" class="edit_inputs">
-    	<br><br>
-    <label for="password" class="edit_labels">Password</label>  
-      <input type="password" name="[user]password" value="<%= current_user.password %>" class="edit_inputs">
-      <br><br>
-    </form>
+	<div class="home_sidebar">
+		<nav class="home_nav">
+			<ul>
+				<li class="navlink"><a href="/home"><i class="fa fa-home fa-2x" class="fontawesome"></i><span class="nav_item">Home</span></a></li>
+				<li class="navlink"><a href="/profile"><i class="fa fa-user fa-2x" class="fontawesome"></i><span class="nav_item"> Profile</span></a></li>
+				<li class="navlink"><a href="/contact_us"><i class="fa fa-envelope-square fa-2x" class="fontawesome"></i><span class="nav_item"> Contact Us </span></a></li>
+				<li class="navlink"><a href="/"><i class="fa fa-sign-out fa-2x" class="fontawesome"></i><span class="nav_item">Logout</span></a></li>
+			</ul>
+		</nav>
+	</div>
 
-	<form method="POST" action="/update_profile" id="update_profile_form">
-		<!-- <label for="image_url" class="edit_labels">Image URL</label>	
-			<input type="text" name="[profile]profile_image_url" value="<%= current_user.profile.profile_image_url %>" class="edit_inputs"> -->
-		<br><br><br>
-		<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
-			<textarea name="[profile]bio" id="edit_textarea" value="<%= current_user.profile.bio %>"></textarea>
-		<br><br>
-		<label for="interests" class="edit_labels" id="interests_label">Interests</label>
-			<textarea name="[profile]interests" class="edit_textarea" value="<%= current_user.profile.interests %>"></textarea>	
-		<br><br>
-		<label for="birthday" class="edit_labels">Birthday</label>
-			<input type="text" name="[profile]birthday" class="edit_inputs" id="birthday" value="<%= current_user.profile.birthday %>">
-		<br><br>
-		<label for="gender" class="edit_labels">Gender</label>
-			<select type="text" name="[profile]gender" class="edit_inputs" id="gender">
-				<option value ="null">Choose One</option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select>	
-		<br><br><br>
-		<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
-			<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
-			<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
-		<br><br><br>
-      	<input type="submit" value="Save Changes" class="submitBtn" id="save_btn">
-	</form>	
+	<div id="update_form_wrapper">
+		
+		<h2 id="update_header">Update Your Profile</h2>
 
+		<form method="POST" action="/update_profile">
+			<label for="fname" class="edit_labels">First Name</label>
+	      <input type="text" name="[user]fname" value="<%= current_user.fname %>" class="edit_inputs" id="update_fname">
+	      <br><br>
+	    <label for="lname" class="edit_labels">Last Name</label>
+	      <input type="text" name="[user]lname" value="<%= current_user.lname %>" class="edit_inputs" id="update_lname">
+	      <br><br>
+	    <label for="email" class="edit_labels">Email Address</label>
+	      <input type="text" name="[user]email" value="<%= current_user.email %>" class="edit_inputs" id="update_email">
+	    	<br><br>
+	    <label for="password" class="edit_labels">Password</label>  
+	      <input type="password" name="[user]password" value="<%= current_user.password %>" class="edit_inputs" id="update_password">
+	      <br><br>
+	    </form>
+
+		<form method="POST" action="/update_profile" id="update_profile_form">
+			<!-- <label for="image_url" class="edit_labels">Image URL</label>	
+				<input type="text" name="[profile]profile_image_url" value="<%= current_user.profile.profile_image_url %>" class="edit_inputs"> -->
+			<br><br><br>
+			<label for="bio" class="edit_labels" id="bio_label">Brief Bio</label>
+				<textarea name="[profile]bio" class="edit_textarea" value="<%= current_user.profile.bio %>"></textarea>
+			<br><br>
+			<label for="interests" class="edit_labels" id="interests_label">Interests</label>
+				<textarea name="[profile]interests" class="edit_textarea" value="<%= current_user.profile.interests %>"></textarea>	
+			<br><br>
+			<label for="birthday" class="edit_labels">Birthday</label>
+				<input type="text" name="[profile]birthday" class="edit_inputs" id="update_birthday" value="<%= current_user.profile.birthday %>">
+			<br><br><br>
+			<label for="gender" class="edit_labels">Gender</label>
+				<select type="text" name="[profile]gender" id="update_gender">
+					<option value ="null">Choose One</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>	
+			<br><br><br>
+			<label for="resident" class="edit_labels">Are you a resident of NYC?</label>
+				<input type="radio" name="[profile]resident" value="True" class="radio_button"> Yes
+				<input type="radio" name="[profile]resident" value="False" class="radio_button"> No
+			<br><br><br>
+	      	<input type="submit" value="Save Changes" class="submitBtn" id="save_btn">
+		</form>	
+
+	</div>
 </div>
 
 

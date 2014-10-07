@@ -511,17 +511,15 @@ body, html{
 .bio_content{
   background-color: #fff;
   margin-left: 280px;
+  margin-top: 20px;
   border-radius: 10px;
   height: 200px;
   width: 500px;
-
-}
-
-.bio_content p{
   padding: 10px;
 }
 
-#profile_bottom{
+#bio_text{
+  padding: 3px;
 }
 
 #profile_sidebar{
@@ -533,6 +531,10 @@ body, html{
 .sidebar_content{
   font-size: 15px;
   margin-top: 30px;
+  text-align: center;
+}
+
+#interests_text{
   text-align: center;
 }
 
@@ -675,11 +677,46 @@ body, html{
 /****************************************************************/
 
 #update_wrapper {
-  width: 800px;
+  width: 1000px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #F1F5FF;
+}
+
+#update_form_wrapper{
+  float: left;
+  background-color: #F1F5FF;
   border-radius: 20px;
   margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#update_header{
+  margin-left: 20px;
+}
+
+#update_fname, #update_lname{
+  margin-left: 60px;
+}
+
+#update_email{
+  margin-left: 35px;
+}
+
+#update_password{
+  margin-left: 67px;
+}
+
+#update_birthday{
+  margin-left: 54px;
+}
+
+#update_gender{
+  margin-left: 58px;
+}
+
+#save_btn{
+  width: 120px;
+  margin-left: 260px;
 }
 
 /****************************************************************/
@@ -692,31 +729,49 @@ body, html{
 /*************************** contact_us *************************/
 /****************************************************************/
 
+#contact_wrapper{
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+#contact_form_wrapper{
+  width: 610px;
+  float: left;
+}
+
+#contact_title{
+  background-color: #F1F5FF;
+  border-radius: 15px;
+  height: 70px;
+  padding-top: 15px;
+  text-align: center;
+}
+
 #contact_main{
-  height: 500px;
-  width: 700px;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -35%);
-  color: black;
-  background: white;
-  opacity:.7;
-  border-radius: 5%;
-  margin-top: 17%;
-  font-family: Amatic SC;
+  height: 425px;
+  background-color: #F1F5FF;
+  border-radius: 15px;
 }
 
 #form2{
-  width:500px;
-  height:400px;
-  margin-top:50px;
-  margin-left:100px;
-  padding-top: 7%;
+  margin-top:20px;
+  margin-left:60px;
+  padding-top: 40px;
 }
 
-#contact_submit{
-  text-align: center
+#email_input{
+  font-weight: 200;
+  font-size: 14px;
+}
+
+#contact_submitBtn{
+  width: 100px;
+  margin-left: 190px;
+}
+
+#contact_submitBtn:hover{
+  box-shadow: 0 1.5px 2px rgba(0,0,0,0.4) inset, 0 -1px 0 rgba(0,0,0,0.2) inset;
 }
 
 /****************************************************************/
