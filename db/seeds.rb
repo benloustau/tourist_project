@@ -70,6 +70,80 @@ user_10 = User.create do |a|
 end
 
 
+User.find(1).follwed << User.find(2)
+
+User.find(2).follwed << User.find(3)
+
+User.find(2).follwed << User.find(1)
+
+User.find(3).follwed << User.find(1)
+User.find(4).follwed << User.find(1)
+
+User.find(5).follwed << User.find(2)
+
+User.find(5).follwed << User.find(4)
+
+User.find(4).follwed << User.find(6)
+User.find(6).follwed << User.find(2)
+
+User.find(6).follwed << User.find(7)
+
+User.find(7).follwed << User.find(8)
+
+User.find(7).follwed << User.find(3)
+User.find(3).follwed << User.find(8)
+
+User.find(8).follwed << User.find(10)
+
+User.find(10).follwed << User.find(9)
+
+User.find(9).follwed << User.find(8)
+User.find(10).follwed << User.find(7)
+
+User.find(6).follwed << User.find(3)
+
+User.find(5).follwed << User.find(10)
+
+User.find(4).follwed << User.find(7)
+
+User.find(1).followers << User.find(2)
+
+User.find(2).followers << User.find(3)
+
+User.find(2).followers << User.find(1)
+
+User.find(3).followers << User.find(1)
+User.find(4).followers << User.find(1)
+
+User.find(5).followers << User.find(2)
+
+User.find(5).followers<< User.find(4)
+
+User.find(4).followers << User.find(6)
+User.find(6).followers << User.find(2)
+
+User.find(6).followers << User.find(7)
+
+User.find(7).followers << User.find(8)
+
+User.find(7).followers << User.find(3)
+User.find(3).followers << User.find(8)
+
+User.find(8).followers << User.find(10)
+
+User.find(10).followers << User.find(9)
+
+User.find(9).followers << User.find(8)
+User.find(10).followers << User.find(7)
+
+User.find(6).followers << User.find(3)
+
+User.find(5).followers << User.find(10)
+
+User.find(4).followers << User.find(7)
+
+
+
 
 
 
